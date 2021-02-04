@@ -1,4 +1,4 @@
-package com.android.developer.expert.core.data.di.module
+package com.android.developer.expert.core.di.module
 
 import androidx.paging.ExperimentalPagingApi
 import com.android.developer.expert.core.data.repository.FavoriteRepositoryImpl

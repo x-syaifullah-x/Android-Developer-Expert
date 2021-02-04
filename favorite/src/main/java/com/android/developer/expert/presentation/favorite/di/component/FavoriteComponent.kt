@@ -1,6 +1,6 @@
 package com.android.developer.expert.presentation.favorite.di.component
 
-import com.android.developer.expert.core.data.di.component.CoreComponent
+import com.android.developer.expert.core.di.component.CoreComponent
 import com.android.developer.expert.di.annotation.AppScope
 import com.android.developer.expert.presentation.favorite.FavoriteFragment
 import com.android.developer.expert.presentation.favorite.di.module.ViewModelModule

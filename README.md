@@ -21,8 +21,9 @@
         all features using the database
 
 ### Modularization
-* Core -> Android Library
-* Favorite -> Dynamic Feature
+* core -> Domain & Data
+* favorite -> Dynamic Feature Favorite
+* the_movie_db -> Data Source The Movie DB
 
 ### System Layer
 * data <----> domain <----> presentation
@@ -45,4 +46,3 @@
 * Obfuscation With ProGuard
 * Encryption Database
 * Use Certificate Pinning And Dns Resolver Connection To Server.
-

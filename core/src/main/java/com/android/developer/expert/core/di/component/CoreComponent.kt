@@ -1,7 +1,7 @@
-package com.android.developer.expert.core.data.di.component
+package com.android.developer.expert.core.di.component
 
 import android.app.Application
-import com.android.developer.expert.core.data.di.module.RepositoryModule
+import com.android.developer.expert.core.di.module.RepositoryModule
 import com.android.developer.expert.core.domain.usecase.Interactor
 import dagger.BindsInstance
 import dagger.Component
