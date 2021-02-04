@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_132sdp"
+    android:layout_height="@dimen/_190sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:layout_marginStart="@dimen/_1sdp"
+    android:layout_marginEnd="@dimen/_1sdp"
+    tools:layout_gravity="center">
+
+    <include
+        android:id="@+id/include_item"
+        layout="@layout/include_item" />
+</androidx.cardview.widget.CardView>

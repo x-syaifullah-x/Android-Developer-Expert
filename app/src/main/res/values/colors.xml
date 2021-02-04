@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_russian">#1a1a2e</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="nero">#282828</color>
+    <color name="blue_grey_300">#90A4AE</color>
+    <color name="demo_dark_transparent">#24000000</color>
+</resources>

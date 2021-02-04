@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_detail_bottom_sheet"
+    android:elevation="1dp"
+    android:minHeight="@dimen/_120sdp"
+    app:behavior_draggable="false"
+    app:behavior_hideable="true"
+    app:behavior_saveFlags="all"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    tools:layout_gravity="bottom">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_120sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/waiting" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/btn_yes"
+        app:layout_constraintTop_toBottomOf="@id/animation_view"
+        tools:text="Confirm" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_yes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/yes"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_no"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".45" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_yes"
+        app:layout_constraintWidth_percent=".45" />
+</androidx.constraintlayout.widget.ConstraintLayout>

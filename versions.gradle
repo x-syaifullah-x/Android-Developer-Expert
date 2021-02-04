@@ -1,0 +1,126 @@
+ext.deps = [:]
+
+def versions = [:]
+versions.mockito = "3.6.0"
+versions.navigation_ktx = "2.3.2"
+versions.lifecycle = "2.2.0"
+versions.retrofit = "2.9.0"
+versions.dagger = "2.30.1"
+versions.room = "2.3.0-alpha04"
+versions.glide = "4.11.0"
+versions.intuit = "1.0.6"
+versions.kotlin = "1.4.21"
+versions.tools_build_gradle = "4.1.2"
+versions.ok_http_3 = "4.9.0"
+versions.lint = "27.1.2" /* versions.tools_build_gradle + 23.0.0 */
+
+def build_versions = [:]
+build_versions.min_sdk = 21
+build_versions.compile_sdk = 30
+build_versions.target_sdk = 30
+build_versions.build_tools = "30.0.3"
+build_versions.version_code = 1
+build_versions.version_name = "1.0"
+ext.build_versions = build_versions
+
+def androidx_test = [:]
+androidx_test.core = "androidx.test:core:1.3.0"
+androidx_test.ext_junit = "androidx.test.ext:junit:1.1.2"
+androidx_test.core_testing = "androidx.arch.core:core-testing:2.1.0"
+deps.androidx_test = androidx_test
+
+def androidx = [:]
+androidx.legacy_support = "androidx.legacy:legacy-support-v4:1.0.0"
+androidx.core_ktx = "androidx.core:core-ktx:1.3.2"
+androidx.appcompat = "androidx.appcompat:appcompat:1.2.0"
+androidx.constraintlayout = "androidx.constraintlayout:constraintlayout:2.0.4"
+androidx.navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$versions.navigation_ktx"
+androidx.navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$versions.navigation_ktx"
+androidx.navigation_dynamic_features_fragment = "androidx.navigation:navigation-dynamic-features-fragment:$versions.navigation_ktx"
+androidx.palette_ktx = "androidx.palette:palette-ktx:1.0.0"
+androidx.paging_runtime_ktx = "androidx.paging:paging-runtime-ktx:3.0.0-alpha11"
+androidx.sqlite_ktx = "androidx.sqlite:sqlite-ktx:2.1.0"
+deps.androidx = androidx
+
+def lifecycle = [:]
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def square_up = [:]
+square_up.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+square_up.retrofit_converter_gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+square_up.okhttp3_dnsoverhttps = "com.squareup.okhttp3:okhttp-dnsoverhttps:$versions.ok_http_3"
+square_up.okhttp3_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.ok_http_3"
+square_up.leakcanary = "com.squareup.leakcanary:leakcanary-android:2.4"
+deps.square_up = square_up
+
+def dagger = [:]
+dagger.dagger = "com.google.dagger:dagger:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+deps.dagger = dagger
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.ktx = "androidx.room:room-ktx:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+deps.room = room
+
+def glide = [:]
+glide.glide = "com.github.bumptech.glide:glide:$versions.glide"
+glide.okhttp3_integration = "com.github.bumptech.glide:okhttp3-integration:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+glide.glide_transformations = "jp.wasabeef:glide-transformations:4.3.0"
+deps.glide = glide
+
+def intuit = [:]
+intuit.sdp = "com.intuit.sdp:sdp-android:$versions.intuit"
+intuit.ssp = "com.intuit.ssp:ssp-android:$versions.intuit"
+deps.intuit = intuit
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+kotlin.kotlinx_coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2"
+deps.kotlin = kotlin
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.inline = "org.mockito:mockito-inline:$versions.mockito"
+mockito.mockitokotlin2_mockito_kotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+deps.mockito = mockito
+
+def gradle = [:]
+gradle.tools_build = "com.android.tools.build:gradle:$versions.tools_build_gradle"
+gradle.kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.gradle = gradle
+
+def google_android = [:]
+google_android.material = "com.google.android.material:material:1.2.1"
+google_android.play_core = "com.google.android.play:core:1.9.0"
+deps.google_android = google_android
+
+def lint = [:]
+lint.lint = "com.android.tools.lint:lint-api:$versions.lint"
+lint.checks = "com.android.tools.lint:lint-checks:$versions.lint"
+deps.lint = lint
+
+deps.android_database_sqlcipher = "net.zetetic:android-database-sqlcipher:4.4.0"
+deps.loaderviewlibrary = "com.elyeproj.libraries:loaderviewlibrary:2.0.0"
+deps.lottie = "com.airbnb.android:lottie:3.5.0"
+deps.timber = "com.jakewharton.timber:timber:4.7.1"
+deps.databinding_compiler = "com.android.databinding:compiler:3.1.4"
+deps.shimmer_recycler_view = "com.github.sharish:ShimmerRecyclerView:v1.3"
+ext.deps = deps
+
+static def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots'
+        url 'https://jitpack.io'
+    }
+}
+
+ext.addRepos = this.&addRepos

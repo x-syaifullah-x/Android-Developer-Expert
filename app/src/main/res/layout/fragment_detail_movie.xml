@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.detail.DetailMovieFragment">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.android.developer.expert.core.domain.model.DetailMovieModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".97" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/text_title"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_title" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/detail_title"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_title"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_title"
+                app:layout_constraintTop_toTopOf="@id/ic_title" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_title_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@{data.title}"
+                android:textSize="@dimen/_11ssp"
+                android:transitionName="@string/title_transition"
+                app:corners="10"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/text_title"
+                app:layout_constraintTop_toBottomOf="@+id/text_title"
+                tools:text="@tools:sample/lorem" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/text_genre"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_title_content"
+                app:srcCompat="@drawable/ic_genre" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_genre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/detail_genre"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_genre"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_genre"
+                app:layout_constraintTop_toTopOf="@id/ic_genre" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_genre_content"
+                set_genres="@{data.genres}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:textSize="@dimen/_11ssp"
+                app:corners="10"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/text_genre"
+                app:layout_constraintTop_toBottomOf="@+id/text_genre"
+                tools:text="Genre_1, Genre_2, Genre_3" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_release"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/text_release"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_genre_content"
+                app:srcCompat="@drawable/ic_date" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_release"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/detail_release_date"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_release"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_release"
+                app:layout_constraintTop_toTopOf="@id/ic_release" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_release_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@{data.releaseDate}"
+                android:textSize="@dimen/_11ssp"
+                app:corners="10"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/text_release"
+                app:layout_constraintTop_toBottomOf="@+id/text_release"
+                tools:text="2021-01-22" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/text_language"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_release_content"
+                app:srcCompat="@drawable/ic_language" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_language"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/detail_original_language"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_language"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_language"
+                app:layout_constraintTop_toTopOf="@id/ic_language" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_language_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@{data.originalLanguage}"
+                android:textSize="@dimen/_11ssp"
+                app:corners="10"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/text_language"
+                app:layout_constraintTop_toBottomOf="@+id/text_language"
+                app:textAllCaps="true"
+                tools:text="EN" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_user_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/text_user_score"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_language_content"
+                app:srcCompat="@drawable/ic_user_score" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_user_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/detail_user_score"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_user_score"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_user_score"
+                app:layout_constraintTop_toTopOf="@id/ic_user_score" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/user_score_content"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:isIndicator="true"
+                android:numStars="10"
+                android:rating="@{data.voteAverage}"
+                android:stepSize="0.0"
+                android:transitionName="@string/score_transition"
+                app:layout_constrainedHeight="true"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@id/text_user_score"
+                app:layout_constraintTop_toBottomOf="@+id/text_user_score"
+                tools:rating="5.7" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_user_score_percent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@{@string/format_percent(data.voteAverage * 100 / 100 * 10)}"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:transitionName="@string/percent_score_transition"
+                app:corners="10"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="@id/user_score_content"
+                app:layout_constraintStart_toStartOf="@id/user_score_content"
+                app:layout_constraintTop_toBottomOf="@+id/user_score_content"
+                tools:text="57.0%" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_overview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintEnd_toStartOf="@id/text_overview"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_user_score_percent"
+                app:srcCompat="@drawable/ic_overview" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_overview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/detail_overview"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_overview"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_overview"
+                app:layout_constraintTop_toTopOf="@id/ic_overview" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_overview_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@{data.overview}"
+                android:textSize="@dimen/_11ssp"
+                app:corners="10"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                app:layout_constraintStart_toStartOf="@id/text_overview"
+                app:layout_constraintTop_toBottomOf="@+id/text_overview"
+                tools:text="@tools:sample/lorem" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_recommendation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{data.recommendation.empty ? View.GONE : View.VISIBLE}"
+                app:layout_constraintEnd_toStartOf="@id/text_recommendation"
+                app:layout_constraintStart_toStartOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_overview_content"
+                app:srcCompat="@drawable/ic_recommendation" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderTextView
+                android:id="@+id/text_recommendation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/recommendations"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:visibility="@{data.recommendation.empty ? View.GONE : View.VISIBLE}"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBottom_toBottomOf="@id/ic_recommendation"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/ic_recommendation"
+                app:layout_constraintTop_toTopOf="@id/ic_recommendation" />
+
+            <include
+                android:id="@+id/recyclerview"
+                layout="@layout/include_list_recommendation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/text_recommendation"
+                tools:layout_marginStart="@dimen/_20sdp" />
+
+            <com.elyeproj.loaderviewlibrary.LoaderImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_170sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:visibility="@{data == null ? View.VISIBLE : View.GONE}"
+                app:corners="40"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/text_recommendation"
+                app:use_gradient="true" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

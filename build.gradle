@@ -1,0 +1,22 @@
+buildscript {
+    apply from: "versions.gradle"
+    ext {
+        kotlin_version = '1.4.21'
+    }
+
+    addRepos(repositories)
+
+    dependencies {
+        classpath deps.gradle.tools_build
+        classpath deps.gradle.kotlin_plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    addRepos(repositories)
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

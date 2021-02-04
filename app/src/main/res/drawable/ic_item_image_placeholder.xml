@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/black" />
+            <!--            <corners-->
+            <!--                android:topLeftRadius="@dimen/_15sdp"-->
+            <!--                android:topRightRadius="@dimen/_15sdp" />-->
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/logo_the_movie_db_125"
+        android:gravity="center"
+        android:bottom="@dimen/_15sdp"
+        android:left="@dimen/_40sdp"
+        android:right="@dimen/_40sdp"
+        android:top="@dimen/_15sdp" />
+</layer-list>

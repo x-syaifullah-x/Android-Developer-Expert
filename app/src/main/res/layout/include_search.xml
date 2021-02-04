@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/line"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_search" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_include_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ic_empty, text_message" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/line"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:letterSpacing=".3"
+        android:text="@string/empty"
+        android:textColor="?colorPrimary"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ic_empty"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_3sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:alpha=".4"
+        app:layout_constraintBottom_toTopOf="@id/card_search"
+        app:srcCompat="@drawable/bg_shadow"
+        app:tint="?colorPrimaryVariant" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/search_done"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".97">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:padding="@dimen/_8sdp"
+            android:src="@android:drawable/ic_menu_search" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="48dp"
+            android:background="@null"
+            android:hint="@string/hint_search"
+            android:inputType="textUri"
+            android:minHeight="@dimen/_36sdp"
+            android:nextFocusRight="@id/search_done"
+            android:singleLine="true"
+            android:transitionName="search">
+
+            <requestFocus />
+        </com.google.android.material.textfield.TextInputEditText>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/search_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:contentDescription="@string/status"
+        android:nextFocusLeft="@id/search_field"
+        app:backgroundTint="?colorPrimary"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="@+id/card_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_search"
+        app:tint="?colorOnPrimary"
+        tools:src="@drawable/ic_check" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/search_done"
+        app:layout_constraintEnd_toEndOf="@id/search_done"
+        app:layout_constraintStart_toStartOf="@id/search_done"
+        app:layout_constraintTop_toTopOf="@id/search_done"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

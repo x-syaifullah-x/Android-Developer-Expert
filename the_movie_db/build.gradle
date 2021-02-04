@@ -1,0 +1,64 @@
+plugins {
+    id "com.android.library"
+    id "kotlin-android"
+    id "kotlin-kapt"
+    id "kotlin-parcelize"
+}
+
+apply from: "$project.rootDir/shared.gradle"
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org"')
+        buildConfigField("String", "API_KEY", '"ec6eeecd76a7ecdbf34b3daa286e8411"')
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    api deps.dagger.dagger
+    kapt deps.dagger.compiler
+
+    api deps.kotlin.stdlib
+
+    api deps.androidx.paging_runtime_ktx
+
+    api deps.timber
+
+    implementation deps.androidx.sqlite_ktx
+    implementation deps.android_database_sqlcipher
+
+    implementation deps.room.runtime
+    implementation deps.room.ktx
+    kapt deps.room.compiler
+
+    implementation deps.square_up.retrofit
+    implementation deps.square_up.retrofit_converter_gson
+    api deps.square_up.okhttp3_dnsoverhttps
+    implementation deps.square_up.okhttp3_logging_interceptor
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/fragment_movie">
+
+    <fragment
+        android:id="@+id/fragment_feature"
+        android:name="com.android.developer.expert.presentation.dynamic.FeatureFragment"
+        tools:layout="@layout/fragment_feature">
+        <action
+            android:id="@+id/action_to_fragment_favorite"
+            app:destination="@id/fragment_favorite"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragment_feature"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_movie"
+        android:name="com.android.developer.expert.presentation.movie.MovieFragment"
+        android:label="Movies"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter_pop"
+            app:popExitAnim="@anim/fragment_exit_pop"
+            android:id="@+id/fragment_movie_to_fragment_error"
+            app:destination="@+id/fragment_error"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragment_movie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_tv"
+        android:name="com.android.developer.expert.presentation.tv.TvFragment"
+        android:label="Tv Show"
+        tools:layout="@layout/fragment_main">
+        <action
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter_pop"
+            app:popExitAnim="@anim/fragment_exit_pop"
+            android:id="@+id/fragment_tv_to_fragment_error"
+            app:destination="@+id/fragment_error"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_favorite"
+        android:name="com.android.developer.expert.presentation.favorite.FavoriteFragment"
+        android:label="Favorite"
+        app:moduleName="favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/fragment_error"
+        android:name="com.android.developer.expert.presentation.error.ErrorFragment"
+        tools:layout="@layout/fragment_error">
+        <action
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter_pop"
+            app:popExitAnim="@anim/fragment_exit_pop"
+            android:id="@+id/fragment_movie"
+            app:destination="@id/fragment_movie"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragment_movie"
+            app:popUpToInclusive="true" />
+
+        <action
+            app:enterAnim="@anim/fragment_enter"
+            app:exitAnim="@anim/fragment_exit"
+            app:popEnterAnim="@anim/fragment_enter_pop"
+            app:popExitAnim="@anim/fragment_exit_pop"
+            android:id="@+id/fragment_tv"
+            app:destination="@id/fragment_tv"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/fragment_tv"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

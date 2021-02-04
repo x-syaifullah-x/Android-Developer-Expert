@@ -1,0 +1,24 @@
+apply plugin: "idea"
+apply from: "$project.rootDir/jacoco.gradle"
+
+//idea {
+//    module {
+//        excludeDirs = [
+//                file("src/main/res/raw/waiting.json"),
+//                file("src/main/res/raw/the_movie_db_certificate.crt"),
+//        ]
+//    }
+//}
+
+dependencies {
+
+    testImplementation deps.mockito.mockitokotlin2_mockito_kotlin
+    testImplementation deps.mockito.core
+    testImplementation deps.mockito.inline
+
+    testImplementation deps.androidx_test.ext_junit
+    testImplementation deps.androidx_test.core
+    testImplementation deps.androidx_test.core_testing
+
+    testImplementation deps.kotlin.kotlinx_coroutines_test
+}
