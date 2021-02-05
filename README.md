@@ -48,7 +48,7 @@
 * Use Certificate Pinning And Dns Resolver Connection To Server.
 
 ### ScreenShoot
-<div align="center">
+<div>
     <img src="https://github.com/x-syaifullah-x/Android-Developer-Expert/blob/submission_2/screenshoot/splash.png" width="100px"</img>
     <img src="https://github.com/x-syaifullah-x/Android-Developer-Expert/blob/submission_2/screenshoot/item_loading.png" width="100px"</img>
     <img src="https://github.com/x-syaifullah-x/Android-Developer-Expert/blob/submission_2/screenshoot/movie_discover.png" width="100px"</img>
