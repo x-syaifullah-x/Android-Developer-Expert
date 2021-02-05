@@ -21,7 +21,7 @@ object DataMovie {
         voteAverage = 0F
     )
 
-    val dataRecommendation = MovieResult(
+    private val movieResult = MovieResult(
         originalTitle = "test",
         title = "test",
         posterPath = "test",
@@ -34,7 +34,14 @@ object DataMovie {
 
     val pageResponse = PageResponse(
         page = 1,
-        results = listOf(dataRecommendation),
+        results = listOf(movieResult),
+        totalPages = 1,
+        totalResults = 1
+    )
+
+    val pageResponseResultsEmpty = PageResponse(
+        page = 1,
+        results = listOf<MovieResult>(),
         totalPages = 1,
         totalResults = 1
     )

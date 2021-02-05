@@ -1,5 +1,7 @@
 package com.the.movie.db.source.remote.network.utils
 
+import timber.log.Timber
+
 sealed class ApiResponse<out R> {
 
     data class Success<out T>(val data: T) : ApiResponse<T>()
@@ -14,7 +16,7 @@ sealed class ApiResponse<out R> {
         ) = try {
             block()
         } catch (e: Exception) {
-            e.printStackTrace()
+            Timber.e(e)
             Error(e)
         }
     }
