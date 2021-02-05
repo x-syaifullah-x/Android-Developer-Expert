@@ -8,6 +8,7 @@ import kotlinx.coroutines.*
 import kotlin.Int.Companion.MAX_VALUE
 
 abstract class RemoteBaseDataSource<Result : IResult> {
+
     protected suspend fun getPage(pageResponse: suspend () -> PageResponse<Result>) =
         ApiResponse.fetch {
             val fetch = pageResponse()

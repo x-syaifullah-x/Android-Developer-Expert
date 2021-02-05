@@ -57,8 +57,8 @@ dependencies {
     implementation deps.room.ktx
     kapt deps.room.compiler
 
-    implementation deps.square_up.retrofit
-    implementation deps.square_up.retrofit_converter_gson
+    api deps.square_up.retrofit
+    api deps.square_up.retrofit_converter_gson
     api deps.square_up.okhttp3_dnsoverhttps
-    implementation deps.square_up.okhttp3_logging_interceptor
+    api deps.square_up.okhttp3_logging_interceptor
 }

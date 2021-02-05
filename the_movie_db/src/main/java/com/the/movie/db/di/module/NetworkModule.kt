@@ -1,10 +1,12 @@
 package com.the.movie.db.di.module
 
 import android.app.Application
-import com.the.movie.db.source.remote.network.ApiService
-import com.the.movie.db.source.remote.network.DnsResolver
-import com.the.movie.db.source.remote.network.SSLCertificateConfigurator.getSSLConfiguration
-import com.the.movie.db.source.remote.network.SSLCertificateConfigurator.getTrustManager
+import com.the.movie.db.source.remote.network.security.DnsResolver
+import com.the.movie.db.source.remote.network.security.SSLCertificateConfigurator.getSSLConfiguration
+import com.the.movie.db.source.remote.network.security.SSLCertificateConfigurator.getTrustManager
+import com.the.movie.db.source.remote.network.services.MovieApiService
+import com.the.movie.db.source.remote.network.services.SearchApiService
+import com.the.movie.db.source.remote.network.services.TvApiService
 import dagger.Module
 import dagger.Provides
 import net.sqlcipher.BuildConfig
@@ -51,10 +53,24 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiService(okHttpClient: OkHttpClient): ApiService = Retrofit.Builder()
+    fun provideApiService(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .baseUrl(com.the.movie.db.BuildConfig.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()
-        .create(ApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideMovieApiService(retrofit: Retrofit): MovieApiService =
+        retrofit.create(MovieApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideTvApiService(retrofit: Retrofit): TvApiService =
+        retrofit.create(TvApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun provideSearchApiService(retrofit: Retrofit): SearchApiService =
+        retrofit.create(SearchApiService::class.java)
 }

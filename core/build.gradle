@@ -31,6 +31,5 @@ android {
 
 dependencies {
     api project(":the_movie_db")
-
     kapt deps.dagger.compiler
 }

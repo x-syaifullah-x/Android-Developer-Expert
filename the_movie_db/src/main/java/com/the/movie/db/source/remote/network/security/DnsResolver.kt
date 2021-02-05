@@ -1,4 +1,4 @@
-package com.the.movie.db.source.remote.network
+package com.the.movie.db.source.remote.network.security
 
 import okhttp3.Dns
 import okhttp3.HttpUrl.Companion.toHttpUrl

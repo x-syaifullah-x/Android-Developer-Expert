@@ -46,3 +46,7 @@
 * Obfuscation With ProGuard
 * Encryption Database
 * Use Certificate Pinning And Dns Resolver Connection To Server.
+
+<div align="center">
+    <img src="https://github.com/x-syaifullah-x/Android-Developer-Expert/blob/submission_5/screenshots/Screenshot_20201122-153117.png" width="180px"</img>
+</div>

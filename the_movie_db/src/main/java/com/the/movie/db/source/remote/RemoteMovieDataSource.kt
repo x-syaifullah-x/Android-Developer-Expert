@@ -2,7 +2,7 @@ package com.the.movie.db.source.remote
 
 import com.the.movie.db.mapper.toMovieWithRecommendation
 import com.the.movie.db.source.remote.network.ApiResponse
-import com.the.movie.db.source.remote.network.ApiService
+import com.the.movie.db.source.remote.network.services.MovieApiService
 import com.the.movie.db.source.remote.response.MovieResponse
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.model.MovieResult
@@ -16,12 +16,11 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class RemoteMovieDataSource @Inject constructor(
-    private val apiService: ApiService
+    private val apiService: MovieApiService
 ) : RemoteBaseDataSource<MovieResult>() {
 
     public override suspend fun getDiscover(page: Int) =
         getPage { apiService.getDiscoverMovie(page = page) }
-
 
     @Suppress("UNCHECKED_CAST")
     suspend fun getMovieWithMovieRecommendation(id: Int) = flow {

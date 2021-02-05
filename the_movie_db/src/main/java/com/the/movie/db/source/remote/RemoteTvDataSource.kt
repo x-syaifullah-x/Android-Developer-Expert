@@ -2,7 +2,7 @@ package com.the.movie.db.source.remote
 
 import com.the.movie.db.mapper.toTvWithTvRecommendation
 import com.the.movie.db.source.remote.network.ApiResponse
-import com.the.movie.db.source.remote.network.ApiService
+import com.the.movie.db.source.remote.network.services.TvApiService
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.TvResponse
 import com.the.movie.db.source.remote.response.model.TvResult
@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class RemoteTvDataSource @Inject constructor(
-    private val apiService: ApiService
+    private val apiService: TvApiService
 ) : RemoteBaseDataSource<TvResult>() {
 
     public override suspend fun getDiscover(page: Int) =
