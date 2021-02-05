@@ -5,6 +5,8 @@ plugins {
     id "kotlin-parcelize"
 }
 
+apply from: "$project.rootDir/jacoco.gradle"
+
 android {
     compileSdkVersion build_versions.compile_sdk
     buildToolsVersion build_versions.build_tools
