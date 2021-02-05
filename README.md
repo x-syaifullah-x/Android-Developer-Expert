@@ -47,6 +47,7 @@
 * Encryption Database
 * Use Certificate Pinning And Dns Resolver Connection To Server.
 
+### ScreenShoot
 <div align="center">
     <img src="https://github.com/x-syaifullah-x/Android-Developer-Expert/blob/submission_2/screenshoot/splash.png" width="100px"</img>
     <img src="https://github.com/x-syaifullah-x/Android-Developer-Expert/blob/submission_2/screenshoot/item_loading.png" width="100px"</img>
