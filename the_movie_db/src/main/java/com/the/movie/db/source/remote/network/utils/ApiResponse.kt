@@ -1,4 +1,4 @@
-package com.the.movie.db.source.remote.network
+package com.the.movie.db.source.remote.network.utils
 
 sealed class ApiResponse<out R> {
 

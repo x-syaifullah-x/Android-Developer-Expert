@@ -1,6 +1,6 @@
 package com.the.movie.db.source.remote
 
-import com.the.movie.db.source.remote.network.ApiResponse
+import com.the.movie.db.source.remote.network.utils.ApiResponse
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.base.IResult
 import com.the.movie.db.source.remote.response.model.MovieResult

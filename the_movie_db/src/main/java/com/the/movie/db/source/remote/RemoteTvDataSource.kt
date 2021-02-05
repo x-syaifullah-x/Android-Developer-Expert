@@ -1,7 +1,7 @@
 package com.the.movie.db.source.remote
 
 import com.the.movie.db.mapper.toTvWithTvRecommendation
-import com.the.movie.db.source.remote.network.ApiResponse
+import com.the.movie.db.source.remote.network.utils.ApiResponse
 import com.the.movie.db.source.remote.network.services.TvApiService
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.TvResponse

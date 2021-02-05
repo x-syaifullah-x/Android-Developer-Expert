@@ -5,8 +5,6 @@ plugins {
     id "kotlin-parcelize"
 }
 
-apply from: "$project.rootDir/shared.gradle"
-
 android {
     compileSdkVersion build_versions.compile_sdk
     buildToolsVersion build_versions.build_tools
@@ -61,4 +59,17 @@ dependencies {
     api deps.square_up.retrofit_converter_gson
     api deps.square_up.okhttp3_dnsoverhttps
     api deps.square_up.okhttp3_logging_interceptor
+
+
+    /* Start Test */
+    testImplementation deps.mockito.mockitokotlin2_mockito_kotlin
+    testImplementation deps.mockito.core
+    testImplementation deps.mockito.inline
+
+    testImplementation deps.androidx_test.ext_junit
+    testImplementation deps.androidx_test.core
+    testImplementation deps.androidx_test.core_testing
+
+    testImplementation deps.kotlin.kotlinx_coroutines_test
+    /* End Test */
 }

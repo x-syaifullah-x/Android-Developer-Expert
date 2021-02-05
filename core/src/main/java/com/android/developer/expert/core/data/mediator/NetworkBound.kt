@@ -2,7 +2,7 @@ package com.android.developer.expert.core.data.mediator
 
 import com.android.developer.expert.core.domain.model.Resource
 import com.android.developer.expert.core.domain.model.base.IModel
-import com.the.movie.db.source.remote.network.ApiResponse
+import com.the.movie.db.source.remote.network.utils.ApiResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 

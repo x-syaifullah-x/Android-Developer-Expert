@@ -1,6 +1,6 @@
 package com.the.movie.db.source.remote
 
-import com.the.movie.db.source.remote.network.ApiResponse
+import com.the.movie.db.source.remote.network.utils.ApiResponse
 import com.the.movie.db.source.remote.network.services.SearchApiService
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

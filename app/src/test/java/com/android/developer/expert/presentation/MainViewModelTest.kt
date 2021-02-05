@@ -14,6 +14,7 @@ import org.mockito.Mock
 import org.mockito.Mockito
 
 class MainViewModelTest : RuleUnitTestWithMockito() {
+
     private lateinit var viewModel: MainViewModel
 
     private lateinit var data: PagingData<ItemModel>

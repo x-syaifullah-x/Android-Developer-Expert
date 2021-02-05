@@ -1,7 +1,7 @@
 package com.the.movie.db.source.remote
 
 import com.the.movie.db.mapper.toMovieWithRecommendation
-import com.the.movie.db.source.remote.network.ApiResponse
+import com.the.movie.db.source.remote.network.utils.ApiResponse
 import com.the.movie.db.source.remote.network.services.MovieApiService
 import com.the.movie.db.source.remote.response.MovieResponse
 import com.the.movie.db.source.remote.response.PageResponse
