@@ -24,7 +24,6 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
         remoteMovieDataSource = RemoteMovieDataSource(movieApiService)
     }
 
-    @ExperimentalCoroutinesApi
     @Test
     fun getMovieWithMovieRecommendationResultSuccess() = runBlocking {
 
@@ -43,7 +42,6 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
             }
     }
 
-    @ExperimentalCoroutinesApi
     @Test
     fun getMovieWithMovieRecommendationResultEmpty() = runBlocking {
 
@@ -60,7 +58,6 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
         }
     }
 
-    @ExperimentalCoroutinesApi
     @Test
     fun getMovieWithMovieRecommendationResultError(): Unit = runBlocking {
 
