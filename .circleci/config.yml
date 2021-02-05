@@ -114,6 +114,34 @@ jobs:
           path: core/build/reports
           destination: reports
 
+  test_module_the_movie_db:
+    executor: android/android
+    steps:
+      - checkout
+      - restore_cache:
+          key: android-orb-v1-
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew clean --warning-mode=all androidDependencies
+      - save_cache:
+          key: 'android-orb-v1-{{ epoch }}'
+          paths:
+            - ~/.android
+            - ~/android
+            - ~/.m2
+            - ~/.gradle
+      - run:
+          name: Run Tests
+          command: ./gradlew clean --warning-mode=all lint the_movie_db:test
+      - store_test_results:
+          path: the_movie_db/build/test-results
+      - store_artifacts:
+          path: the_movie_db/build/reports
+          destination: reports
+
   code_coverage_module_app:
     executor: android/android
     steps:
@@ -192,6 +220,32 @@ jobs:
           path: core/build/core-reports/testDebugUnitTestCoverage/html
           destination: coverage
 
+  code_coverage_module_the_movie_db:
+    executor: android/android
+    steps:
+      - checkout
+      - restore_cache:
+          key: android-orb-v1-
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew clean --warning-mode=all androidDependencies
+      - save_cache:
+          key: 'android-orb-v1-{{ epoch }}'
+          paths:
+            - ~/.android
+            - ~/android
+            - ~/.m2
+            - ~/.gradle
+      - run:
+          name: Unit Test Coverage
+          command: ./gradlew clean --warning-mode=all the_movie_db:testDebugUnitTestCoverage
+      - store_artifacts:
+          path: the_movie_db/build/the_movie_db-reports/testDebugUnitTestCoverage/html
+          destination: coverage
+
 workflows:
   version: 2.1
   build | test | code_coverage:
@@ -200,6 +254,8 @@ workflows:
       - test_module_app
       - test_module_favorite
       - test_module_core
+      - test_module_the_movie_db
       - code_coverage_module_app
       - code_coverage_module_favorite
       - code_coverage_module_core
+      - code_coverage_module_the_movie_db
