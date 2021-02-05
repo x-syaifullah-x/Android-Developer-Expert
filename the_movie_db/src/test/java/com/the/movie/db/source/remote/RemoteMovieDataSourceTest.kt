@@ -13,48 +13,48 @@ import org.mockito.Mockito
 
 class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
 
-    private lateinit var remoteMovieDataSource: RemoteMovieDataSource
+    private lateinit var dataSource: RemoteMovieDataSource
 
     @Mock
-    lateinit var movieApiService: MovieApiService
+    lateinit var apiService: MovieApiService
 
     override fun before() {
-        remoteMovieDataSource = RemoteMovieDataSource(movieApiService)
+        dataSource = RemoteMovieDataSource(apiService)
     }
 
     @Test
     fun getDiscoverResultSuccess() = runBlocking {
-        Mockito.`when`(movieApiService.getDiscoverMovie(page = 1))
+        Mockito.`when`(apiService.getDiscoverMovie(page = 1))
             .thenReturn(FakeDataMovie.pageResponse)
-        val result = remoteMovieDataSource.getDiscover(1)
+        val result = dataSource.getDiscover(1)
         Assert.assertTrue(result is ApiResponse.Success)
     }
 
     @Test
     fun getDiscoverResultEmpty() = runBlocking {
-        Mockito.`when`(movieApiService.getDiscoverMovie(page = 1))
+        Mockito.`when`(apiService.getDiscoverMovie(page = 1))
             .thenReturn(FakeDataMovie.pageResponseResultsEmpty)
-        val result = remoteMovieDataSource.getDiscover(1)
+        val result = dataSource.getDiscover(1)
         Assert.assertTrue(result is ApiResponse.Empty)
     }
 
     @Test
     fun getDiscoverResultError() = runBlocking {
-        Mockito.`when`(movieApiService.getDiscoverMovie(page = 1)).thenThrow(FakeDataMovie.exception)
-        val result = remoteMovieDataSource.getDiscover(1)
+        Mockito.`when`(apiService.getDiscoverMovie(page = 1)).thenThrow(FakeDataMovie.exception)
+        val result = dataSource.getDiscover(1)
         Assert.assertTrue(result is ApiResponse.Error)
     }
 
     @Test
     fun getMovieWithMovieRecommendationResultSuccess() = runBlocking {
 
-        Mockito.`when`(movieApiService.getMovie(id = FakeDataMovie.FAKE_ID))
+        Mockito.`when`(apiService.getMovie(id = FakeDataMovie.FAKE_ID))
             .thenReturn(FakeDataMovie.movieResponse)
 
-        Mockito.`when`(movieApiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
+        Mockito.`when`(apiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
             .thenReturn(FakeDataMovie.pageResponse)
 
-        remoteMovieDataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID)
+        dataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID)
             .collectLatest { response ->
                 Assert.assertTrue(response is ApiResponse.Success)
                 if (response is ApiResponse.Success) {
@@ -66,13 +66,13 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
     @Test
     fun getMovieWithMovieRecommendationResultEmpty(): Unit = runBlocking {
 
-        Mockito.`when`(movieApiService.getMovie(id = FakeDataMovie.FAKE_ID))
+        Mockito.`when`(apiService.getMovie(id = FakeDataMovie.FAKE_ID))
             .thenReturn(null)
 
-        Mockito.`when`(movieApiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
+        Mockito.`when`(apiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
             .thenReturn(FakeDataMovie.pageResponseResultsEmpty)
 
-        remoteMovieDataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID).apply {
+        dataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID).apply {
             collectLatest {
                 Assert.assertEquals(ApiResponse.Empty, it)
             }
@@ -82,13 +82,13 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
     @Test
     fun getMovieWithMovieRecommendationResultError(): Unit = runBlocking {
 
-        Mockito.`when`(movieApiService.getMovie(id = FakeDataMovie.FAKE_ID))
+        Mockito.`when`(apiService.getMovie(id = FakeDataMovie.FAKE_ID))
             .thenThrow(FakeDataMovie.exception)
 
-        Mockito.`when`(movieApiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
+        Mockito.`when`(apiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
             .thenReturn(FakeDataMovie.pageResponse)
 
-        val results = remoteMovieDataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID)
+        val results = dataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID)
 
         results.collectLatest {
             Assert.assertEquals(ApiResponse.Error(FakeDataMovie.exception), it)
