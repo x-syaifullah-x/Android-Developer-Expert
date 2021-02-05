@@ -59,14 +59,16 @@ class RemoteTvDataSourceTest : RuleUnitTestWithMockito() {
             .collectLatest { response ->
                 Assert.assertTrue(response is ApiResponse.Success)
                 if (response is ApiResponse.Success) {
-                    Assert.assertEquals(FakeDataTv.tvWithRecommendation, response.data)
+                    val dataFake = FakeDataTv.tvWithRecommendation
+                    val data = response.data
+                    Assert.assertEquals(dataFake, data)
+                    Assert.assertEquals(dataFake.recommendations, data.recommendations)
                 }
             }
     }
 
     @Test
     fun getMovieWithMovieRecommendationResultEmpty(): Unit = runBlocking {
-
         Mockito.`when`(apiService.getTv(id = FakeDataTv.FAKE_ID))
             .thenReturn(null)
 
@@ -82,7 +84,6 @@ class RemoteTvDataSourceTest : RuleUnitTestWithMockito() {
 
     @Test
     fun getMovieWithMovieRecommendationResultError(): Unit = runBlocking {
-
         Mockito.`when`(apiService.getTv(id = FakeDataTv.FAKE_ID))
             .thenThrow(FakeDataTv.exception)
 

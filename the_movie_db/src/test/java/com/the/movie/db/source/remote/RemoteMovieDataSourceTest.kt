@@ -58,7 +58,10 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithMockito() {
             .collectLatest { response ->
                 Assert.assertTrue(response is ApiResponse.Success)
                 if (response is ApiResponse.Success) {
-                    Assert.assertEquals(FakeDataMovie.movieWithRecommendation, response.data)
+                    val dataFake = FakeDataMovie.movieWithRecommendation
+                    val data = response.data
+                    Assert.assertEquals(dataFake, data)
+                    Assert.assertEquals(dataFake.recommendations, data.recommendations)
                 }
             }
     }
