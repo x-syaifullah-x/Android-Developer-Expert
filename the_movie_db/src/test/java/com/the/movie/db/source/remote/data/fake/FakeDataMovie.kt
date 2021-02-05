@@ -4,9 +4,13 @@ import com.the.movie.db.source.remote.response.MovieResponse
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.model.MovieResult
 import com.the.movie.db.source.remote.response.model.MovieWithRecommendation
+import org.mockito.exceptions.base.MockitoException
 
-object DataMovie {
+object FakeDataMovie {
+
     const val FAKE_ID = 22323
+
+    val exception = MockitoException("test error")
 
     val movieResponse = MovieResponse(
         backdropPath = "test",
@@ -40,10 +44,10 @@ object DataMovie {
     )
 
     val pageResponseResultsEmpty = PageResponse(
-        page = 1,
+        page = 0,
         results = listOf<MovieResult>(),
-        totalPages = 1,
-        totalResults = 1
+        totalPages = 0,
+        totalResults = 0
     )
 
     val movieWithRecommendation = MovieWithRecommendation(
