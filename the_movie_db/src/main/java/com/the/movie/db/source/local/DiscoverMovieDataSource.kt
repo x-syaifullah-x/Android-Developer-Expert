@@ -28,10 +28,12 @@ class DiscoverMovieDataSource @Inject constructor(
         val discoverMovie = DiscoverMovieEntity(
             page = data.page, totalPages = data.totalPages, totalResults = data.totalResults
         )
-        val discoverMovieResults = data.results
-            .map { it.toDiscoverMovieResultEntity(data.page) }
         val resultDiscoverMovie = dao.insert(discoverMovie).toInt() != 0
-        val resultDiscoverMovieResult = dao.insertDiscoverResults(discoverMovieResults).contains(0)
-        return@withTransaction resultDiscoverMovie && resultDiscoverMovieResult
+
+        val results = data.results
+        if (results.isNotEmpty()) dao.insertDiscoverResults(
+            results.map { it.toDiscoverMovieResultEntity(data.page) }
+        )
+        return@withTransaction resultDiscoverMovie
     }
 }

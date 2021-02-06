@@ -37,6 +37,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    packagingOptions {
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
 }
 
 dependencies {
@@ -63,7 +68,7 @@ dependencies {
     api deps.square_up.okhttp3_logging_interceptor
 
 
-    /* Start Test */
+    /* Start Unit Test */
     testImplementation deps.mockito.mockitokotlin2_mockito_kotlin
     testImplementation deps.mockito.core
     testImplementation deps.mockito.inline
@@ -73,5 +78,16 @@ dependencies {
     testImplementation deps.androidx_test.core_testing
 
     testImplementation deps.kotlin.kotlinx_coroutines_test
-    /* End Test */
+    /* End Unit Test */
+
+    /* Start Android Test */
+    androidTestImplementation deps.kotlin.kotlinx_coroutines_test
+    androidTestImplementation deps.test.junit_junit
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test:rules:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.3.0"
+    implementation "androidx.test.espresso:espresso-idling-resource:3.3.0"
+    /* End Android Test */
 }
