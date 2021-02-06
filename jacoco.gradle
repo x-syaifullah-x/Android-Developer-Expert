@@ -66,15 +66,27 @@ project.afterEvaluate {
             ]
 
             classDirectories.setFrom(files([
-                    fileTree(dir: "$buildDir/tmp/kotlin-classes/${variantName}", excludes: fileFilter),
+                    fileTree(dir: "$buildDir/tmp/kotlin-classes/$variantName", excludes: fileFilter),
+//                    fileTree(dir: "$buildDir/tmp/kotlin-classes/${variantName}AndroidTest"),
+//                    fileTree(dir: "$buildDir/tmp/kotlin-classes/${variantName}UnitTest", excludes: fileFilter),
             ]))
 
             def coverageSourceDirs = [
                     "$project.rootDir/$project.name/src/main/java",
             ]
 
+//            def coverageAndroidTestSourceDirs = [
+//                    "$project.rootDir/$project.name/src/androidTest/java",
+//            ]
+//
+//            def coverageUnitTestSourceDirs = [
+//                    "$project.rootDir/$project.name/src/test/java",
+//            ]
+
             additionalSourceDirs.setFrom(files(coverageSourceDirs))
             sourceDirectories.setFrom(files(coverageSourceDirs))
+//            additionalSourceDirs.setFrom(files(coverageSourceDirs,coverageAndroidTestSourceDirs,coverageUnitTestSourceDirs))
+//            sourceDirectories.setFrom(files(coverageSourceDirs,coverageAndroidTestSourceDirs,coverageUnitTestSourceDirs))
 
             executionData(files([
                     "${project.buildDir}/jacoco/${unitTestTask}.exec"
