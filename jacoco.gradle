@@ -70,11 +70,12 @@ project.afterEvaluate {
             ]))
 
             def coverageSourceDirs = [
-                    "$project.rootDir/the_movie_db/src/main/java",
-                    "$project.rootDir/app/src/main/java",
-                    "$project.projectDir/src/${variantName}/java",
-                    "$project.rootDir/favorite/src/main/java",
-                    "$project.rootDir/core/src/main/java",
+//                    "$project.rootDir/the_movie_db/src/main/java",
+//                    "$project.rootDir/app/src/main/java",
+//                    "$project.projectDir/src/${variantName}/java",
+//                    "$project.rootDir/favorite/src/main/java",
+//                    "$project.rootDir/core/src/main/java",
+                    "$project.rootDir/$project.name/src/main/java",
             ]
 
             additionalSourceDirs.setFrom(files(coverageSourceDirs))
