@@ -262,16 +262,16 @@ workflows:
   version: 2.1
   build | test | code_coverage:
     jobs:
-#      - build
-#
-#      - test_module_app
-#      - code_coverage_module_app
-#
-#      - test_module_favorite
-#      - code_coverage_module_favorite
-#
-#      - test_module_core
-#      - code_coverage_module_core
-#
-#      - test_module_the_movie_db
+      - build
+
+      - test_module_app
+      - code_coverage_module_app
+
+      - test_module_favorite
+      - code_coverage_module_favorite
+
+      - test_module_core
+      - code_coverage_module_core
+
+      - test_module_the_movie_db
       - code_coverage_module_the_movie_db
