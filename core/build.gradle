@@ -7,6 +7,8 @@ plugins {
 
 apply from: "$project.rootDir/shared.gradle"
 
+apply from: "$project.rootDir/code_coverage_module.gradle"
+
 android {
     compileSdkVersion build_versions.compile_sdk
     buildToolsVersion build_versions.build_tools

@@ -1,0 +1,93 @@
+apply plugin: "jacoco"
+
+jacoco {
+    reportsDir = file("$buildDir/code_coverage")
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
+}
+
+tasks.withType(Test) { jacoco.includeNoLocationClasses = true }
+
+project.afterEvaluate {
+
+    (android.hasProperty('applicationVariants')
+            ? android.'applicationVariants'
+            : android.'libraryVariants').all { variant ->
+        def variantName = variant.name
+        def unitTestTask = "test${variantName.capitalize()}UnitTest"
+
+        tasks.create(
+                name: "${unitTestTask}Coverage",
+                type: JacocoReport,
+                dependsOn: ["$unitTestTask"]
+        ) {
+            group = "Reporting"
+            description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
+
+            reports {
+                html.enabled = true
+                xml.enabled = false
+                csv.enabled = false
+            }
+
+            def fileFilter = [
+                    '**/R.class',
+                    '**/R$*.class',
+                    '**/BuildConfig.*',
+                    '**/Manifest*.*',
+                    '**/*Test*.*',
+                    '**/com/example/databinding/*',
+                    '**/com/example/generated/callback/*',
+                    '**/android/databinding/*',
+                    '**/androidx/databinding/*',
+                    '**/di/module/*',
+                    '**/*MapperImpl*.*',
+                    '**/*$ViewInjector*.*',
+                    '**/*$ViewBinder*.*',
+                    '**/BuildConfig.*',
+                    '**/*Component*.*',
+                    '**/*BR*.*',
+                    '**/Manifest*.*',
+                    '**/*$Lambda$*.*',
+                    '**/*Companion*.*',
+                    '**/*Module.*', /* filtering Dagger modules classes */
+                    '**/*Dagger*.*',/* filtering Dagger-generated classes */
+                    '**/*MembersInjector*.*',
+                    '**/*_Factory*.*',
+                    '**/*_Provide*Factory*.*',
+                    '**/*Extensions*.*',
+                    '**/*$Result.*', /* filtering `sealed` and `data` classes */
+                    '**/*$Result$*.*',/* filtering `sealed` and `data` classes */
+                    '**/*Args*.*', /* filtering Navigation Component generated classes */
+                    '**/*Directions*.*' /* filtering Navigation Component generated classes */
+            ]
+
+            classDirectories.setFrom(files([
+                    fileTree(dir: "$rootDir/favorite/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
+                    fileTree(dir: "$rootDir/core/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
+                    fileTree(dir: "$rootDir/the_movie_db/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
+                    fileTree(dir: "$rootDir/app/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
+            ]))
+
+             def coverageSource = files(
+                    "$rootDir/core/src/main/java",
+                    "$rootDir/core/src/main/java",
+                    "$rootDir/the_movie_db/src/main/java",
+                    "$rootDir/favorite/src/main/java"
+            )
+
+            additionalSourceDirs.setFrom(coverageSource)
+            sourceDirectories.setFrom(coverageSource)
+
+            executionData(files([
+                    "$rootDir/app/build/jacoco/${unitTestTask}.exec",
+                    "$rootDir/favorite/build/jacoco/${unitTestTask}.exec",
+                    "$rootDir/core/build/jacoco/${unitTestTask}.exec",
+                    "$rootDir/the_movie_db/build/jacoco/${unitTestTask}.exec",
+            ]))
+        }
+    }
+}
