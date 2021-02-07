@@ -1,7 +1,7 @@
 apply plugin: "jacoco"
 
 jacoco {
-    reportsDir = file("$buildDir/code_coverage")
+    reportsDir = file("$buildDir/${project.name}_code_coverage")
 }
 
 tasks.withType(Test) {
