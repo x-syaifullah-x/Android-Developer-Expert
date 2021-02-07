@@ -1,7 +1,7 @@
 apply plugin: "jacoco"
 
 jacoco {
-    reportsDir = file("$buildDir/$project.name-reports")
+    reportsDir = file("$buildDir/code_coverage")
 }
 
 tasks.withType(Test) {
@@ -75,18 +75,8 @@ project.afterEvaluate {
                     "$project.rootDir/$project.name/src/main/java",
             ]
 
-//            def coverageAndroidTestSourceDirs = [
-//                    "$project.rootDir/$project.name/src/androidTest/java",
-//            ]
-//
-//            def coverageUnitTestSourceDirs = [
-//                    "$project.rootDir/$project.name/src/test/java",
-//            ]
-
             additionalSourceDirs.setFrom(files(coverageSourceDirs))
             sourceDirectories.setFrom(files(coverageSourceDirs))
-//            additionalSourceDirs.setFrom(files(coverageSourceDirs,coverageAndroidTestSourceDirs,coverageUnitTestSourceDirs))
-//            sourceDirectories.setFrom(files(coverageSourceDirs,coverageAndroidTestSourceDirs,coverageUnitTestSourceDirs))
 
             executionData(files([
                     "${project.buildDir}/jacoco/${unitTestTask}.exec"
