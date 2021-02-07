@@ -1,9 +1,11 @@
 package com.the.movie.db.source.local
 
 import androidx.room.withTransaction
+import com.the.movie.db.mapper.toDiscoverMovieResultEntity
 import com.the.movie.db.mapper.toDiscoverTvResultEntity
 import com.the.movie.db.source.local.base.IDiscoverDataSource
 import com.the.movie.db.source.local.dao.TvDao
+import com.the.movie.db.source.local.entity.discover.movie.DiscoverMovieEntity
 import com.the.movie.db.source.local.entity.discover.tv.DiscoverTvEntity
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.model.TvResult
@@ -25,13 +27,15 @@ class DiscoverTvDataSource @Inject constructor(
     }
 
     override suspend fun insert(data: PageResponse<TvResult>) = dao.db.withTransaction {
-        val discoverMovie = DiscoverTvEntity(
+        val discover = DiscoverTvEntity(
             page = data.page, totalPages = data.totalPages, totalResults = data.totalResults
         )
-        val discoverTvResults = data.results
-            .map { it.toDiscoverTvResultEntity(data.page) }
-        val resultDiscoverTv = dao.insert(discoverMovie).toInt() != 0
-        val resultDiscoverTvResult = dao.insertDiscoverResults(discoverTvResults).contains(0)
-        return@withTransaction resultDiscoverTv && resultDiscoverTvResult
+        val resultDiscover = dao.insert(discover).toInt() != 0
+
+        val results = data.results
+        if (results.isNotEmpty()) dao.insertDiscoverResults(
+            results.map { it.toDiscoverTvResultEntity(data.page) }
+        )
+        return@withTransaction resultDiscover
     }
 }

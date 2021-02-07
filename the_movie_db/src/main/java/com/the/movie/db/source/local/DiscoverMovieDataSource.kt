@@ -25,15 +25,15 @@ class DiscoverMovieDataSource @Inject constructor(
     }
 
     override suspend fun insert(data: PageResponse<MovieResult>) = dao.db.withTransaction {
-        val discoverMovie = DiscoverMovieEntity(
+        val discover = DiscoverMovieEntity(
             page = data.page, totalPages = data.totalPages, totalResults = data.totalResults
         )
-        val resultDiscoverMovie = dao.insert(discoverMovie).toInt() != 0
+        val resultDiscover = dao.insert(discover).toInt() != 0
 
         val results = data.results
         if (results.isNotEmpty()) dao.insertDiscoverResults(
             results.map { it.toDiscoverMovieResultEntity(data.page) }
         )
-        return@withTransaction resultDiscoverMovie
+        return@withTransaction resultDiscover
     }
 }

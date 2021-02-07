@@ -279,7 +279,7 @@ jobs:
             - ~/.gradle
       - run:
           name: Unit Test Coverage
-          command: ./gradlew favorite:testDebugUnitTestCoverage & ./gradlew core:testDebugUnitTestCoverage & ./gradlew the_movie_db:testDebugUnitTestCoverage && ./gradlew testDebugUnitTestCoverage
+          command: ./gradlew favorite:testDebugUnitTestCoverage && ./gradlew core:testDebugUnitTestCoverage && ./gradlew the_movie_db:testDebugUnitTestCoverage && ./gradlew testDebugUnitTestCoverage
       - store_artifacts:
           path: app/build/code_coverage/testDebugUnitTestCoverage/html
           destination: coverage
