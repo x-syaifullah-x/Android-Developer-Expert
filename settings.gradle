@@ -1,3 +1,4 @@
+include ':test_utils'
 include ':the_movie_db'
 include ':core'
 include ':favorite'

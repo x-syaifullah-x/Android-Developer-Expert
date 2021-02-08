@@ -1,17 +1,20 @@
 package com.the.movie.db.source.remote
 
-import com.the.movie.db.source.remote.data.fake.FakeDataSearch
+import com.the.movie.db.data.fake.remote.FakeDataSearch
 import com.the.movie.db.source.remote.network.services.SearchApiService
 import com.the.movie.db.source.remote.network.utils.ApiResponse
-import com.the.movie.db.utils.RuleUnitTestWithMockito
+import test.utils.rule.RuleUnitTestWithCoroutine
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.junit.MockitoJUnitRunner
 
-class RemoteSearchDataSourceTest : RuleUnitTestWithMockito() {
+@RunWith(MockitoJUnitRunner::class)
+class RemoteSearchDataSourceTest : RuleUnitTestWithCoroutine() {
     private lateinit var dataSource: RemoteSearchDataSource
 
     @Mock

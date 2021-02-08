@@ -2,6 +2,7 @@ package com.the.movie.db.source.local
 
 import com.the.movie.db.data.fake.local.FakeData
 import com.the.movie.db.source.local.dao.MovieDao
+import com.the.movie.db.source.local.dao.TvDao
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
@@ -12,14 +13,14 @@ import org.mockito.junit.MockitoJUnitRunner
 import test.utils.rule.RuleUnitTestWithCoroutine
 
 @RunWith(MockitoJUnitRunner::class)
-class DiscoverMovieDataSourceTest : RuleUnitTestWithCoroutine() {
-    private lateinit var dataSource: DiscoverMovieDataSource
+class DiscoverTvDataSourceTest : RuleUnitTestWithCoroutine() {
+    private lateinit var dataSource: DiscoverTvDataSource
 
     @Mock
-    lateinit var dao: MovieDao
+    lateinit var dao: TvDao
 
     override fun before() {
-        dataSource = DiscoverMovieDataSource(dao)
+        dataSource = DiscoverTvDataSource(dao)
     }
 
     @Test
@@ -40,7 +41,7 @@ class DiscoverMovieDataSourceTest : RuleUnitTestWithCoroutine() {
 
     @Test
     fun getPreviousPageIsNullTest(): Unit = runBlocking {
-        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverMovieEntity(1))
+        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverTvEntity(1))
         val results = dataSource.getPreviousPage()
         Assert.assertTrue(results == null)
     }
@@ -48,7 +49,7 @@ class DiscoverMovieDataSourceTest : RuleUnitTestWithCoroutine() {
     @Test
     fun getPreviousPageIsReadyTest(): Unit = runBlocking {
         val totalPage = 10
-        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverMovieEntity(totalPage))
+        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverTvEntity(totalPage))
         val results = dataSource.getPreviousPage()
         Assert.assertTrue(results != null)
         Assert.assertTrue((results == totalPage - 1))
@@ -64,7 +65,7 @@ class DiscoverMovieDataSourceTest : RuleUnitTestWithCoroutine() {
     @Test
     fun getCurrentPageIsNotNullTest(): Unit = runBlocking {
         val totalPage = 1
-        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverMovieEntity(totalPage))
+        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverTvEntity(totalPage))
 
         val results = dataSource.getCurrentPage()
         Assert.assertTrue(results != null)
@@ -74,7 +75,7 @@ class DiscoverMovieDataSourceTest : RuleUnitTestWithCoroutine() {
     @Test
     fun getNextPageIsNotNullTest(): Unit = runBlocking {
         val totalPage = 2
-        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverMovieEntity(totalPage))
+        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverTvEntity(totalPage))
         val results = dataSource.getNextPage()
         Assert.assertTrue(results == totalPage + 1)
     }
@@ -82,7 +83,7 @@ class DiscoverMovieDataSourceTest : RuleUnitTestWithCoroutine() {
     @Test
     fun getNextPageIsNullTest(): Unit = runBlocking {
         val totalPage = 1
-        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverMovieEntity(totalPage))
+        Mockito.`when`(dao.getLastPage()).thenReturn(FakeData.getDiscoverTvEntity(totalPage))
         val results = dataSource.getNextPage()
         Assert.assertTrue(results == null)
     }

@@ -1,4 +1,4 @@
-package com.the.movie.db.source.remote.data.fake
+package com.the.movie.db.data.fake.remote
 
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.TvResponse

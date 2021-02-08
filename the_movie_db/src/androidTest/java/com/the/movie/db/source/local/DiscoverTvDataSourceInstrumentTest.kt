@@ -9,9 +9,9 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
 
-class DiscoverMovieDataSourceInstrumentTest {
+class DiscoverTvDataSourceInstrumentTest {
 
-    private lateinit var dataSource: DiscoverMovieDataSource
+    private lateinit var dataSource: DiscoverTvDataSource
 
     private lateinit var db: TheMovieDbDatabase
 
@@ -20,7 +20,7 @@ class DiscoverMovieDataSourceInstrumentTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(context, TheMovieDbDatabase::class.java).build()
 
-        dataSource = DiscoverMovieDataSource(db.movieDao())
+        dataSource = DiscoverTvDataSource(db.tvDao())
         val results = dataSource.insert(Data.fakePageResponse(listOf()))
         Assert.assertTrue(results)
     }
@@ -30,8 +30,8 @@ class DiscoverMovieDataSourceInstrumentTest {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(context, TheMovieDbDatabase::class.java).build()
 
-        dataSource = DiscoverMovieDataSource(db.movieDao())
-        val results = dataSource.insert(Data.fakePageResponse(listOf(Data.fakeMovieResult())))
+        dataSource = DiscoverTvDataSource(db.tvDao())
+        val results = dataSource.insert(Data.fakePageResponse(listOf(Data.fakeTvResult())))
         Assert.assertTrue(results)
     }
 }

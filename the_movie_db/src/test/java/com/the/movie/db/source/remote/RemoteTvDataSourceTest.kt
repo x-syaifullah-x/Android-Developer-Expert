@@ -1,18 +1,21 @@
 package com.the.movie.db.source.remote
 
-import com.the.movie.db.source.remote.data.fake.FakeDataMovie
-import com.the.movie.db.source.remote.data.fake.FakeDataTv
+import com.the.movie.db.data.fake.remote.FakeDataMovie
+import com.the.movie.db.data.fake.remote.FakeDataTv
 import com.the.movie.db.source.remote.network.services.TvApiService
 import com.the.movie.db.source.remote.network.utils.ApiResponse
-import com.the.movie.db.utils.RuleUnitTestWithMockito
+import test.utils.rule.RuleUnitTestWithCoroutine
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.junit.MockitoJUnitRunner
 
-class RemoteTvDataSourceTest : RuleUnitTestWithMockito() {
+@RunWith(MockitoJUnitRunner::class)
+class RemoteTvDataSourceTest : RuleUnitTestWithCoroutine() {
 
     private lateinit var dataSource: RemoteTvDataSource
 

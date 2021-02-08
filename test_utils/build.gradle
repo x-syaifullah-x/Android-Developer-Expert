@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation deps.kotlin.stdlib
+    implementation "androidx.paging:paging-common-ktx:2.1.2"
+
+    /* Start Unit Test */
+    api deps.mockito.mockitokotlin2_mockito_kotlin
+    api deps.mockito.core
+    api deps.mockito.inline
+
+    api deps.androidx_test.ext_junit
+    api deps.androidx_test.core
+    api deps.androidx_test.core_testing
+
+    api deps.kotlin.kotlinx_coroutines_test
+    /* End Unit Test */
+
+    /* Start Android Test */
+    api deps.test.junit_junit
+    api "androidx.arch.core:core-testing:2.1.0"
+    api 'androidx.test.ext:junit:1.1.2'
+    api 'androidx.test:rules:1.3.0'
+    api 'androidx.test.espresso:espresso-core:3.3.0'
+    api "androidx.test.espresso:espresso-contrib:3.3.0"
+    api "androidx.test.espresso:espresso-idling-resource:3.3.0"
+    /* End Android Test */
+}

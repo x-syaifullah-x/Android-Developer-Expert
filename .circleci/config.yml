@@ -258,7 +258,7 @@ jobs:
           destination: coverage
   # End Module the_movie_db
 
-  App Code Coverage:
+  Code Coverage:
     executor: android/android
     steps:
       - checkout
@@ -302,4 +302,4 @@ workflows:
 #      - test_module_the_movie_db
 #      - code_coverage_module_the_movie_db
 
-      - App Code Coverage
+      - Code Coverage
