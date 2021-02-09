@@ -258,7 +258,7 @@ jobs:
           destination: coverage
   # End Module the_movie_db
 
-  Code Coverage:
+  App Code Coverage:
     executor: android/android
     steps:
       - checkout
@@ -281,7 +281,7 @@ jobs:
           name: Run Code Coverage
           command: ./gradlew clean test debugCodeCoverage
       - store_artifacts:
-          path: app/build/code_coverage/testDebugUnitTestCoverage/html
+          path: app/build/app_code_coverage/debugCodeCoverage/html
           destination: coverage
 
 workflows:
@@ -302,5 +302,5 @@ workflows:
 #      - test_module_the_movie_db
 #      - code_coverage_module_the_movie_db
 
-      - Code Coverage
+      - App Code Coverage
 #      - Code Coverage Module The Movie DB
