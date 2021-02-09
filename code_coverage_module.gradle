@@ -1,6 +1,7 @@
 apply plugin: "jacoco"
 
 jacoco {
+    print("tetetetetette ${project.name}")
     reportsDir = file("$buildDir/${project.name}_code_coverage")
 }
 
