@@ -16,13 +16,13 @@ project.afterEvaluate {
         def variantName = variant.name
         def testVariantNameCodeCoverageTask = "${variantName.toLowerCase()}CodeCoverage"
 
-        def unitTest = ":app:test${variantName.capitalize()}UnitTest"
-        def unitTestFav = ":favorite:test${variantName.capitalize()}UnitTest"
+        def appUnitTest = "test${variantName.capitalize()}UnitTest"
+        def FavoriteUnitTest = ":favorite:test${variantName.capitalize()}UnitTest"
 
         tasks.create(
                 name: "${testVariantNameCodeCoverageTask}",
                 type: JacocoReport,
-                dependsOn: [unitTestFav, unitTest]
+                dependsOn: [FavoriteUnitTest, appUnitTest]
         ) {
             group = "Reporting"
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
@@ -83,10 +83,10 @@ project.afterEvaluate {
             sourceDirectories.setFrom(coverageSource)
 
             executionData(files([
-                    "$rootDir/app/build/jacoco/${unitTest}.exec",
-                    "$rootDir/favorite/build/jacoco/${unitTest}.exec",
-                    "$rootDir/core/build/jacoco/${unitTest}.exec",
-                    "$rootDir/the_movie_db/build/jacoco/${unitTest}.exec",
+                    "$rootDir/app/build/jacoco/${appUnitTest}.exec",
+                    "$rootDir/favorite/build/jacoco/${appUnitTest}.exec",
+                    "$rootDir/core/build/jacoco/${appUnitTest}.exec",
+                    "$rootDir/the_movie_db/build/jacoco/${appUnitTest}.exec",
             ]))
         }
     }
