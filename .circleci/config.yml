@@ -86,7 +86,6 @@ jobs:
           destination: coverage
   # End Module App
 
-
   # Start Module Favorite
   test_module_favorite:
     executor: android/android
@@ -139,10 +138,9 @@ jobs:
           name: Run Code Coverage
           command: ./gradlew clean favorite:debugCodeCoverage
       - store_artifacts:
-          path: app/build/favorite_code_coverage/debugCodeCoverage/html
+          path: favorite/build/favorite_code_coverage/debugCodeCoverage/html
           destination: coverage
   # End Module Favorite
-
 
   # Start Module Core
   test_module_core:
@@ -196,10 +194,9 @@ jobs:
           name: Run Code Coverage
           command: ./gradlew clean core:debugCodeCoverage
       - store_artifacts:
-          path: app/build/core_code_coverage/debugCodeCoverage/html
+          path: core/build/core_code_coverage/debugCodeCoverage/html
           destination: coverage
   # End Module Core
-
 
   # Start Module the_movie_db
   test_module_the_movie_db:
@@ -253,7 +250,7 @@ jobs:
           name: Run Code Coverage
           command: ./gradlew clean the_movie_db:debugCodeCoverage
       - store_artifacts:
-          path: app/build/the_movie_db_code_coverage/debugCodeCoverage/html
+          path: the_movie_db/build/the_movie_db_code_coverage/debugCodeCoverage/html
           destination: coverage
   # End Module the_movie_db
 
@@ -261,19 +258,19 @@ workflows:
   version: 2.1
   build | test | code_coverage:
     jobs:
-      #      - build
-      #
-      #      - test_module_app
-      #      - code_coverage_module_app
-      #
-      #      - test_module_favorite
-      #      - code_coverage_module_favorite
-      #
-      #      - test_module_core
-      #      - code_coverage_module_core
-      #
-      #      - test_module_the_movie_db
-      #      - code_coverage_module_the_movie_db
+      # - build
+
+      # - test_module_app
+      # - code_coverage_module_app
+
+      # - test_module_favorite
+      # - code_coverage_module_favorite
+
+      # - test_module_core
+      # - code_coverage_module_core
+
+      # - test_module_the_movie_db
+      # - code_coverage_module_the_movie_db
 
       - Code Coverage App
       - Code Coverage The Movie DB Module
