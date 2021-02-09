@@ -15,12 +15,14 @@ project.afterEvaluate {
             : android.'libraryVariants').all { variant ->
         def variantName = variant.name
         def testVariantNameCodeCoverageTask = "${variantName.toLowerCase()}CodeCoverage"
-        def unitTest = "test${variantName.capitalize()}UnitTest"
+
+        def unitTest = ":app:test${variantName.capitalize()}UnitTest"
+        def unitTestFav = ":favorite:test${variantName.capitalize()}UnitTest"
 
         tasks.create(
                 name: "${testVariantNameCodeCoverageTask}",
                 type: JacocoReport,
-                dependsOn: [unitTest]
+                dependsOn: [unitTestFav, unitTest]
         ) {
             group = "Reporting"
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
