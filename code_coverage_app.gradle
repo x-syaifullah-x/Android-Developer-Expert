@@ -10,9 +10,7 @@ tasks.withType(Test) {
 }
 
 project.afterEvaluate {
-    (android.hasProperty('applicationVariants')
-            ? android.'applicationVariants'
-            : android.'libraryVariants').all { variant ->
+    android.'applicationVariants'.all { variant ->
         def variantName = variant.name
         def testVariantNameCodeCoverageTask = "${variantName.toLowerCase()}CodeCoverage"
 

@@ -30,7 +30,7 @@ jobs:
           path: app/build/outputs/apk/debug/
           destination: artifact-file
 
-  # Start Module App
+  # Start App
   test_module_app:
     executor: android/android
     steps:
@@ -84,9 +84,9 @@ jobs:
       - store_artifacts:
           path: app/build/app_code_coverage/debugCodeCoverage/html
           destination: coverage
-  # End Module App
+  # End App
 
-  # Start Module Favorite
+  # Start Favorite
   test_module_favorite:
     executor: android/android
     steps:
@@ -140,9 +140,9 @@ jobs:
       - store_artifacts:
           path: favorite/build/favorite_code_coverage/debugCodeCoverage/html
           destination: coverage
-  # End Module Favorite
+  # End Favorite
 
-  # Start Module Core
+  # Start Core
   test_module_core:
     executor: android/android
     steps:
@@ -196,9 +196,9 @@ jobs:
       - store_artifacts:
           path: core/build/core_code_coverage/debugCodeCoverage/html
           destination: coverage
-  # End Module Core
+  # End Core
 
-  # Start Module the_movie_db
+  # Start the_movie_db
   test_module_the_movie_db:
     executor: android/android
     steps:
@@ -252,7 +252,7 @@ jobs:
       - store_artifacts:
           path: the_movie_db/build/the_movie_db_code_coverage/debugCodeCoverage/html
           destination: coverage
-  # End Module the_movie_db
+  # End the_movie_db
 
 workflows:
   version: 2.1
