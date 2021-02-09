@@ -18,18 +18,13 @@ android {
         versionName build_versions.version_name
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         consumerProguardFiles "consumer-rules.pro"
 
         buildConfigField("String", "BASE_URL", '"https://api.themoviedb.org"')
         buildConfigField("String", "API_KEY", '"ec6eeecd76a7ecdbf34b3daa286e8411"')
     }
 
-    buildTypes {
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8

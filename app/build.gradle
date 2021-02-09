@@ -4,8 +4,6 @@ plugins {
     id "kotlin-kapt"
 }
 
-apply from: "$project.rootDir/shared.gradle"
-
 apply from: "$project.rootDir/code_coverage_app.gradle"
 
 android {
@@ -25,7 +23,7 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
@@ -59,6 +57,10 @@ android {
 dependencies {
 
     api project(":core")
+
+    testImplementation project(":test_utils")
+
+    androidTestImplementation project(":test_utils")
 
     debugImplementation deps.square_up.leakcanary
 

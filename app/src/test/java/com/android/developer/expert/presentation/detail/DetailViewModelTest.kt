@@ -5,16 +5,19 @@ import com.android.developer.expert.core.domain.model.DetailMovieModel
 import com.android.developer.expert.core.domain.model.DetailTvModel
 import com.android.developer.expert.core.domain.model.Resource
 import com.android.developer.expert.core.domain.usecase.Interactor
-import com.android.developer.expert.utils.RuleUnitTestWithMockito
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.junit.MockitoJUnitRunner
+import test.utils.rule.RuleUnitTestWithCoroutine
 
-class DetailViewModelTest : RuleUnitTestWithMockito() {
+@RunWith(MockitoJUnitRunner::class)
+class DetailViewModelTest : RuleUnitTestWithCoroutine() {
     private lateinit var viewModel: DetailViewModel
     private val id = 100
     private val errorMessage = "Error"

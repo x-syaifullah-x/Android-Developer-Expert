@@ -4,16 +4,19 @@ import androidx.lifecycle.Observer
 import com.android.developer.expert.core.domain.model.Resource
 import com.android.developer.expert.core.domain.model.SearchModel
 import com.android.developer.expert.core.domain.usecase.Interactor
-import com.android.developer.expert.utils.RuleUnitTestWithMockito
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert
 import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.Mockito
+import org.mockito.junit.MockitoJUnitRunner
+import test.utils.rule.RuleUnitTestWithCoroutine
 
-class SearchViewModelTest : RuleUnitTestWithMockito() {
+@RunWith(MockitoJUnitRunner::class)
+class SearchViewModelTest : RuleUnitTestWithCoroutine() {
 
     private lateinit var viewModel: SearchViewModel
 

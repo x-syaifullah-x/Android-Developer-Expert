@@ -1,7 +1,7 @@
 apply plugin: "jacoco"
 
 jacoco {
-    reportsDir = file("$buildDir/code_coverage")
+    reportsDir = file("$buildDir/${project.name}_code_coverage")
 }
 
 tasks.withType(Test) {
@@ -9,20 +9,20 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*']
 }
 
-tasks.withType(Test) { jacoco.includeNoLocationClasses = true }
-
 project.afterEvaluate {
 
     (android.hasProperty('applicationVariants')
             ? android.'applicationVariants'
             : android.'libraryVariants').all { variant ->
+
         def variantName = variant.name
-        def unitTestTask = "test${variantName.capitalize()}UnitTest"
+        def testVariantNameCodeCoverageTask = "${variantName.toLowerCase()}CodeCoverage"
+        def unitTest = "test${variantName.capitalize()}UnitTest"
 
         tasks.create(
-                name: "${unitTestTask}Coverage",
+                name: "${testVariantNameCodeCoverageTask}",
                 type: JacocoReport,
-                dependsOn: ["$unitTestTask"]
+                dependsOn: [unitTest]
         ) {
             group = "Reporting"
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
@@ -67,8 +67,6 @@ project.afterEvaluate {
 
             classDirectories.setFrom(files([
                     fileTree(dir: "$buildDir/tmp/kotlin-classes/$variantName", excludes: fileFilter),
-//                    fileTree(dir: "$buildDir/tmp/kotlin-classes/${variantName}AndroidTest"),
-//                    fileTree(dir: "$buildDir/tmp/kotlin-classes/${variantName}UnitTest", excludes: fileFilter),
             ]))
 
             def coverageSourceDirs = [
@@ -79,7 +77,7 @@ project.afterEvaluate {
             sourceDirectories.setFrom(files(coverageSourceDirs))
 
             executionData(files([
-                    "${project.buildDir}/jacoco/${unitTestTask}.exec"
+                    "${project.buildDir}/jacoco/${unitTest}.exec"
             ]))
         }
     }

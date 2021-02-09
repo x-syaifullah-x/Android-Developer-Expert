@@ -4,9 +4,8 @@ plugins {
     id "kotlin-kapt"
 }
 
-apply from: "$project.rootDir/shared.gradle"
-
 apply from: "$project.rootDir/code_coverage_module.gradle"
+
 
 android {
     compileSdkVersion build_versions.compile_sdk
@@ -36,6 +35,10 @@ android {
 
 dependencies {
     implementation project(":app")
+
+    testImplementation project(":test_utils")
+
+    androidTestImplementation project(":test_utils")
 
     kapt deps.dagger.compiler
 }

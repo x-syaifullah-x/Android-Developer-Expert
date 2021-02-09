@@ -195,9 +195,9 @@ jobs:
             - ~/.gradle
       - run:
           name: Unit Test Coverage
-          command: ./gradlew clean --warning-mode=all core:testDebugUnitTestCoverage
+          command: ./gradlew clean --warning-mode=all core:DebugUnitTestCodeCoverage
       - store_artifacts:
-          path: core/build/core-reports/testDebugUnitTestCoverage/html
+          path: core/build/core-reports/DebugUnitTestCodeCoverage/html
           destination: coverage
   # End Module Core
 
@@ -231,7 +231,7 @@ jobs:
           path: the_movie_db/build/reports
           destination: reports
 
-  code_coverage_module_the_movie_db:
+  Code Coverage Module The Movie DB:
     executor: android/android
     steps:
       - checkout
@@ -252,9 +252,9 @@ jobs:
             - ~/.gradle
       - run:
           name: Unit Test Coverage
-          command: ./gradlew clean --warning-mode=all the_movie_db:testDebugUnitTestCoverage
+          command: ./gradlew clean --warning-mode=all the_movie_db:testDebugCodeCoverage
       - store_artifacts:
-          path: the_movie_db/build/the_movie_db-reports/testDebugUnitTestCoverage/html
+          path: the_movie_db/build/code_coverage/testDebugCodeCoverage/html
           destination: coverage
   # End Module the_movie_db
 
@@ -279,7 +279,7 @@ jobs:
             - ~/.gradle
       - run:
           name: Run Code Coverage
-          command: ./gradlew clean favorite:test && ./gradlew core:test && ./gradlew the_movie_db:test && ./gradlew testDebugUnitTestCoverage
+          command: ./gradlew clean test debugCodeCoverage
       - store_artifacts:
           path: app/build/code_coverage/testDebugUnitTestCoverage/html
           destination: coverage
@@ -303,3 +303,4 @@ workflows:
 #      - code_coverage_module_the_movie_db
 
       - Code Coverage
+#      - Code Coverage Module The Movie DB

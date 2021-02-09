@@ -1,4 +1,4 @@
-package com.android.developer.expert.presentation
+package com.android.developer.expert.presentation.favorite
 
 import androidx.lifecycle.Observer
 import androidx.paging.PagingData
@@ -16,9 +16,8 @@ import org.mockito.junit.MockitoJUnitRunner
 import test.utils.rule.RuleUnitTestWithCoroutine
 
 @RunWith(MockitoJUnitRunner::class)
-class MainViewModelTest : RuleUnitTestWithCoroutine() {
-
-    private lateinit var viewModel: MainViewModel
+class FavoriteViewModelTest : RuleUnitTestWithCoroutine() {
+    private lateinit var viewModel: FavoriteViewModel
 
     private lateinit var data: PagingData<ItemModel>
 
@@ -32,7 +31,7 @@ class MainViewModelTest : RuleUnitTestWithCoroutine() {
     lateinit var captor: ArgumentCaptor<PagingData<ItemModel>>
 
     override fun before() {
-        viewModel = MainViewModel(interact)
+        viewModel = FavoriteViewModel(interact)
     }
 
     @Test
@@ -41,11 +40,11 @@ class MainViewModelTest : RuleUnitTestWithCoroutine() {
 
         val flow = flow { emit(data) }
 
-        Mockito.`when`(interact.getMovieDiscover()).thenReturn(flow)
+        Mockito.`when`(interact.getMovieFavorite()).thenReturn(flow)
 
-        viewModel.discoverMovie.observeForever(mockObserver)
+        viewModel.movieFav.observeForever(mockObserver)
 
-        Mockito.verify(interact).getMovieDiscover()
+        Mockito.verify(interact).getMovieFavorite()
 
         Mockito.verify(mockObserver).onChanged(captor.capture())
 
@@ -58,11 +57,11 @@ class MainViewModelTest : RuleUnitTestWithCoroutine() {
 
         val flow = flow { emit(data) }
 
-        Mockito.`when`(interact.getDiscoverTv()).thenReturn(flow)
+        Mockito.`when`(interact.getTvFavorite()).thenReturn(flow)
 
-        viewModel.discoverTv.observeForever(mockObserver)
+        viewModel.tvFav.observeForever(mockObserver)
 
-        Mockito.verify(interact).getDiscoverTv()
+        Mockito.verify(interact).getTvFavorite()
 
         Mockito.verify(mockObserver).onChanged(captor.capture())
 

@@ -1,7 +1,7 @@
 apply plugin: "jacoco"
 
 jacoco {
-    reportsDir = file("$buildDir/code_coverage")
+    reportsDir = file("$buildDir/${project.name}_code_coverage")
 }
 
 tasks.withType(Test) {
@@ -9,20 +9,18 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*']
 }
 
-tasks.withType(Test) { jacoco.includeNoLocationClasses = true }
-
 project.afterEvaluate {
-
     (android.hasProperty('applicationVariants')
             ? android.'applicationVariants'
             : android.'libraryVariants').all { variant ->
         def variantName = variant.name
-        def unitTestTask = "test${variantName.capitalize()}UnitTest"
+        def testVariantNameCodeCoverageTask = "${variantName.toLowerCase()}CodeCoverage"
+        def unitTest = "test${variantName.capitalize()}UnitTest"
 
         tasks.create(
-                name: "${unitTestTask}Coverage",
+                name: "${testVariantNameCodeCoverageTask}",
                 type: JacocoReport,
-                dependsOn: ["$unitTestTask"]
+                dependsOn: [unitTest]
         ) {
             group = "Reporting"
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
@@ -83,10 +81,10 @@ project.afterEvaluate {
             sourceDirectories.setFrom(coverageSource)
 
             executionData(files([
-                    "$rootDir/app/build/jacoco/${unitTestTask}.exec",
-                    "$rootDir/favorite/build/jacoco/${unitTestTask}.exec",
-                    "$rootDir/core/build/jacoco/${unitTestTask}.exec",
-                    "$rootDir/the_movie_db/build/jacoco/${unitTestTask}.exec",
+                    "$rootDir/app/build/jacoco/${unitTest}.exec",
+                    "$rootDir/favorite/build/jacoco/${unitTest}.exec",
+                    "$rootDir/core/build/jacoco/${unitTest}.exec",
+                    "$rootDir/the_movie_db/build/jacoco/${unitTest}.exec",
             ]))
         }
     }
