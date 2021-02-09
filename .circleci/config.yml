@@ -279,7 +279,7 @@ jobs:
             - ~/.gradle
       - run:
           name: Run Code Coverage
-          command: ./gradlew clean test debugCodeCoverage
+          command: ./gradlew clean --no-parallel test debugCodeCoverage
       - store_artifacts:
           path: app/build/app_code_coverage/debugCodeCoverage/html
           destination: coverage
