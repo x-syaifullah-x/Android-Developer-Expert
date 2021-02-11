@@ -12,6 +12,7 @@ import com.the.movie.db.mapper.toPageEmbedded
 import com.the.movie.db.source.local.MovieDataSource
 import com.the.movie.db.source.mediator.DiscoverMovieRemoteMediator
 import com.the.movie.db.source.remote.RemoteMovieDataSource
+import com.the.movie.db.source.remote.response.model.MovieWithRecommendation
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -25,7 +26,7 @@ class MovieRepositoryImpl @Inject constructor(
 
     override fun getMovie(id: Int) = networkBound(
         loadFromDB = { movie.getMovie(id).map { it.toDetailMovieModel() } },
-        fetch = { remoteMovie.getMovieWithMovieRecommendation(id) },
+        fetch = { remoteMovie.getResponseWithRecommendation<MovieWithRecommendation>(id) },
         saveFetchResult = {
             val movieEntity = it.toMovieEntity()
             val genres = it.genres.map { data -> data.toMovieGenreEntity() }

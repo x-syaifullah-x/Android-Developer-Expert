@@ -4,6 +4,7 @@ import com.the.movie.db.data.fake.remote.FakeDataMovie
 import com.the.movie.db.data.fake.remote.FakeDataTv
 import com.the.movie.db.source.remote.network.services.TvApiService
 import com.the.movie.db.source.remote.network.utils.ApiResponse
+import com.the.movie.db.source.remote.response.model.TvWithTvRecommendation
 import test.utils.rule.RuleUnitTestWithCoroutine
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.runBlocking
@@ -57,7 +58,7 @@ class RemoteTvDataSourceTest : RuleUnitTestWithCoroutine() {
         Mockito.`when`(apiService.getRecommendationTv(id = FakeDataTv.FAKE_ID, 1))
             .thenReturn(FakeDataTv.pageResponse)
 
-        dataSource.getTvWithTvRecommendation(FakeDataTv.FAKE_ID)
+        dataSource.getResponseWithRecommendation<TvWithTvRecommendation>(FakeDataTv.FAKE_ID)
             .collectLatest { response ->
                 Assert.assertTrue(response is ApiResponse.Success)
                 if (response is ApiResponse.Success) {
@@ -77,7 +78,7 @@ class RemoteTvDataSourceTest : RuleUnitTestWithCoroutine() {
         Mockito.`when`(apiService.getRecommendationTv(id = FakeDataTv.FAKE_ID, 1))
             .thenReturn(FakeDataTv.pageResponseResultsEmpty)
 
-        dataSource.getTvWithTvRecommendation(FakeDataTv.FAKE_ID).apply {
+        dataSource.getResponseWithRecommendation<TvWithTvRecommendation>(FakeDataTv.FAKE_ID).apply {
             collectLatest {
                 Assert.assertEquals(ApiResponse.Empty, it)
             }
@@ -92,7 +93,7 @@ class RemoteTvDataSourceTest : RuleUnitTestWithCoroutine() {
         Mockito.`when`(apiService.getRecommendationTv(id = FakeDataTv.FAKE_ID, 1))
             .thenReturn(FakeDataTv.pageResponse)
 
-        val results = dataSource.getTvWithTvRecommendation(FakeDataTv.FAKE_ID)
+        val results = dataSource.getResponseWithRecommendation<TvWithTvRecommendation>(FakeDataTv.FAKE_ID)
 
         results.collectLatest {
             Assert.assertEquals(ApiResponse.Error(FakeDataTv.exception), it)

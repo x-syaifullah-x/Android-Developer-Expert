@@ -3,7 +3,7 @@ package com.the.movie.db.source.remote
 import com.the.movie.db.data.fake.remote.FakeDataMovie
 import com.the.movie.db.source.remote.network.services.MovieApiService
 import com.the.movie.db.source.remote.network.utils.ApiResponse
-import test.utils.rule.RuleUnitTestWithCoroutine
+import com.the.movie.db.source.remote.response.model.MovieWithRecommendation
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
@@ -12,6 +12,7 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
+import test.utils.rule.RuleUnitTestWithCoroutine
 
 @RunWith(MockitoJUnitRunner::class)
 class RemoteMovieDataSourceTest : RuleUnitTestWithCoroutine() {
@@ -57,7 +58,7 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithCoroutine() {
         Mockito.`when`(apiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
             .thenReturn(FakeDataMovie.pageResponse)
 
-        dataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID)
+        dataSource.getResponseWithRecommendation<MovieWithRecommendation>(FakeDataMovie.FAKE_ID)
             .collectLatest { response ->
                 Assert.assertTrue(response is ApiResponse.Success)
                 if (response is ApiResponse.Success) {
@@ -78,11 +79,12 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithCoroutine() {
         Mockito.`when`(apiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
             .thenReturn(FakeDataMovie.pageResponseResultsEmpty)
 
-        dataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID).apply {
-            collectLatest {
-                Assert.assertEquals(ApiResponse.Empty, it)
+        dataSource.getResponseWithRecommendation<MovieWithRecommendation>(FakeDataMovie.FAKE_ID)
+            .apply {
+                collectLatest {
+                    Assert.assertEquals(ApiResponse.Empty, it)
+                }
             }
-        }
     }
 
     @Test
@@ -94,7 +96,8 @@ class RemoteMovieDataSourceTest : RuleUnitTestWithCoroutine() {
         Mockito.`when`(apiService.getRecommendationMovie(id = FakeDataMovie.FAKE_ID, 1))
             .thenReturn(FakeDataMovie.pageResponse)
 
-        val results = dataSource.getMovieWithMovieRecommendation(FakeDataMovie.FAKE_ID)
+        val results =
+            dataSource.getResponseWithRecommendation<MovieWithRecommendation>(FakeDataMovie.FAKE_ID)
 
         results.collectLatest {
             Assert.assertEquals(ApiResponse.Error(FakeDataMovie.exception), it)

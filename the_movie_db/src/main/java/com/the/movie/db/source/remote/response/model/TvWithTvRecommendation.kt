@@ -2,6 +2,7 @@ package com.the.movie.db.source.remote.response.model
 
 import com.google.gson.annotations.SerializedName
 import com.the.movie.db.source.remote.response.PageResponse
+import com.the.movie.db.source.remote.response.base.IRecommendation
 import com.the.movie.db.source.remote.response.base.ITvResponse
 
 data class TvWithTvRecommendation(
@@ -16,5 +17,5 @@ data class TvWithTvRecommendation(
     @SerializedName("last_air_date") override val lastAirDate: String,
     @SerializedName("name") override val name: String,
     @SerializedName("original_name") override val originalName: String,
-    @SerializedName("recommendation") val recommendations: List<PageResponse<TvResult>>
-) : ITvResponse
+    @SerializedName("recommendation") override val recommendations: List<PageResponse<TvResult>>
+) : ITvResponse, IRecommendation<TvResult>

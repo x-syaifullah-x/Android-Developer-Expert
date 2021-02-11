@@ -3,6 +3,7 @@ package com.the.movie.db.source.remote.response.model
 import com.google.gson.annotations.SerializedName
 import com.the.movie.db.source.remote.response.PageResponse
 import com.the.movie.db.source.remote.response.base.IMovieResponse
+import com.the.movie.db.source.remote.response.base.IRecommendation
 
 data class MovieWithRecommendation(
 
@@ -17,6 +18,6 @@ data class MovieWithRecommendation(
     @SerializedName("release_date") override val releaseDate: String?,
     @SerializedName("title") override val title: String,
 
-    @SerializedName("recommendation") val recommendations: List<PageResponse<MovieResult>>
+    @SerializedName("recommendation") override val recommendations: List<PageResponse<MovieResult>>
 
-) : IMovieResponse
+) : IMovieResponse, IRecommendation<MovieResult>

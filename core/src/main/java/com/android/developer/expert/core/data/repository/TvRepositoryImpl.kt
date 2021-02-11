@@ -12,6 +12,7 @@ import com.the.movie.db.mapper.toTvGenreEntity
 import com.the.movie.db.source.local.TvDataSource
 import com.the.movie.db.source.mediator.DiscoverTvRemoteMediator
 import com.the.movie.db.source.remote.RemoteTvDataSource
+import com.the.movie.db.source.remote.response.model.TvWithTvRecommendation
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
@@ -30,7 +31,7 @@ class TvRepositoryImpl @Inject constructor(
     ).flow.map { it.map { data -> data.toItemModel(data.name) } }
 
     override fun getTv(id: Int) = networkBound(
-        fetch = { remoteTv.getTvWithTvRecommendation(id) },
+        fetch = { remoteTv.getResponseWithRecommendation<TvWithTvRecommendation>(id) },
         loadFromDB = { tv.getTv(id).map { it.toDetailTvModel() } },
         saveFetchResult = {
             val tvEntity = it.toTvEntity()
