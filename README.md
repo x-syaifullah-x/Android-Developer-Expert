@@ -4,12 +4,29 @@
 
 ### Api
 
-* [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
+* ###### [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
 
 ### System Design
 * ###### Use Design Pettern
-* ###### Use Architecture Pattern
+* ###### Architecture Pattern
+    * ###### With MVVM
 * ###### Use Clean Architecture
+    * ###### Ui -> Framework
+    * ###### Presenter -> Interface Adapter
+    * ###### UseCase -> Application Business Rule
+    * ###### Entities -> Enterprise Business Rule
+    * ###### Repository -> Interface Adapter
+    * ###### DataSource -> Framework
+
+### System Layer
+* ###### Presentation ( UI & PRASENTER )
+* ###### Domain ( USE CASE & Entities )
+* ###### Data ( REPOSITORY & DATA SOURCE )
+
+### Modularization
+* ###### core -> Domain & Data
+* ###### favorite -> Dynamic Feature Favorite
+* ###### the_movie_db -> Data Source The Movie DB
 
 ### Features :
 * ###### List Item Discover Movie WIth Pagging
@@ -25,14 +42,6 @@
 
         all features using the database
 
-### Modularization
-* ###### core -> Domain & Data
-* ###### favorite -> Dynamic Feature Favorite
-* ###### the_movie_db -> Data Source The Movie DB
-
-### System Layer
-* ###### data <----> domain <----> presentation
-
 ### Reactive Programming
 * ###### With Flow
 
@@ -41,7 +50,9 @@
 
 ### Continuous Integration
 * ###### CircleCI
-* ###### Code Coverage -> jacoco
+
+### Code Coverage
+* ###### With jacoco
 
 ### Performance
 * ###### Leak analyzed - > Leak Canary
