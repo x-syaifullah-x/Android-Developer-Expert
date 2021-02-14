@@ -35,9 +35,8 @@ android {
 dependencies {
     implementation project(":app")
 
-    testImplementation project(":test_utils")
-
-    androidTestImplementation project(":test_utils")
+    testImplementation "com.github.x-syaifullah-x:Android-Modules:module_test_utils-SNAPSHOT"
+    androidTestImplementation "com.github.x-syaifullah-x:Android-Modules:module_test_utils-SNAPSHOT"
 
     kapt deps.dagger.compiler
 }
