@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
-    api project(":the_movie_db")
+    api 'com.github.x-syaifullah-x:Android-Modules:module_the_movie_db-SNAPSHOT'
+
     kapt deps.dagger.compiler
 }
