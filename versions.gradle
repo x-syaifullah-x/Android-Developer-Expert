@@ -110,12 +110,18 @@ lint.lint = "com.android.tools.lint:lint-api:$versions.lint"
 lint.checks = "com.android.tools.lint:lint-checks:$versions.lint"
 deps.lint = lint
 
+def my_module = [:]
+my_module.test_utils = "com.github.x-syaifullah-x:android-module-test_utils:1.0"
+my_module.the_movie_db = "com.github.x-syaifullah-x:android-module-the_movie_db:1.0"
+deps.my_module = my_module
+
 deps.android_database_sqlcipher = "net.zetetic:android-database-sqlcipher:4.4.0"
 deps.loaderviewlibrary = "com.elyeproj.libraries:loaderviewlibrary:2.0.0"
 deps.lottie = "com.airbnb.android:lottie:3.5.0"
 deps.timber = "com.jakewharton.timber:timber:4.7.1"
 deps.databinding_compiler = "com.android.databinding:compiler:3.1.4"
 deps.shimmer_recycler_view = "com.github.sharish:ShimmerRecyclerView:v1.3"
+
 ext.deps = deps
 
 static def addRepos(RepositoryHandler handler) {

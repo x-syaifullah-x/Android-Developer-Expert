@@ -58,8 +58,8 @@ dependencies {
 
     api project(":core")
 
-    testImplementation "com.github.x-syaifullah-x:Android-Modules:module_test_utils-SNAPSHOT"
-    androidTestImplementation "com.github.x-syaifullah-x:Android-Modules:module_test_utils-SNAPSHOT"
+    testImplementation deps.my_module.test_utils
+    androidTestImplementation deps.my_module.test_utils
 
     debugImplementation deps.square_up.leakcanary
 

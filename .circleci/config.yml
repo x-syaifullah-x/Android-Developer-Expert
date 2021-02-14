@@ -273,6 +273,6 @@ workflows:
       # - code_coverage_module_the_movie_db
 
       - Code Coverage App
-      - Code Coverage The Movie DB Module
+#      - Code Coverage The Movie DB Module
       - Code Coverage Core Module
       - Code Coverage Favorite Module
