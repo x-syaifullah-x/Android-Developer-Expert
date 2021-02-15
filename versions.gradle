@@ -111,7 +111,7 @@ lint.checks = "com.android.tools.lint:lint-checks:$versions.lint"
 deps.lint = lint
 
 def my_module = [:]
-my_module.test_utils = "com.github.x-syaifullah-x:android-module-test_utils:1.0"
+my_module.test_utils = "com.github.x-syaifullah-x:android-module-test_utils:2.0"
 my_module.the_movie_db = "com.github.x-syaifullah-x:android-module-the_movie_db:1.0"
 deps.my_module = my_module
 
