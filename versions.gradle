@@ -101,7 +101,7 @@ gradle.kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotl
 deps.gradle = gradle
 
 def google_android = [:]
-google_android.material = "com.google.android.material:material:1.2.1"
+google_android.material = "com.google.android.material:material:1.3.0"
 google_android.play_core = "com.google.android.play:core:1.9.0"
 deps.google_android = google_android
 
@@ -111,11 +111,12 @@ lint.checks = "com.android.tools.lint:lint-checks:$versions.lint"
 deps.lint = lint
 
 def my_module = [:]
-my_module.test_utils = "com.github.x-syaifullah-x:android-module-test_utils:2.0"
+my_module.test_utils = "com.github.x-syaifullah-x:android-module-test_utils:3.0"
 my_module.the_movie_db = "com.github.x-syaifullah-x:android-module-the_movie_db:1.0"
+my_module.base = "com.github.x-syaifullah-x:android-module-base:1.0"
 deps.my_module = my_module
 
-deps.android_database_sqlcipher = "net.zetetic:android-database-sqlcipher:4.4.0"
+deps.android_database_sqlcipher = "net.zetetic:android-database-snavigation_ui_ktxqlcipher:4.4.0"
 deps.loaderviewlibrary = "com.elyeproj.libraries:loaderviewlibrary:2.0.0"
 deps.lottie = "com.airbnb.android:lottie:3.5.0"
 deps.timber = "com.jakewharton.timber:timber:4.7.1"

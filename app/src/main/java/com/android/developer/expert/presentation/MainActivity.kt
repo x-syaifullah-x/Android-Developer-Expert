@@ -11,7 +11,11 @@ import com.SearchActivity
 import com.android.developer.expert.R.id.*
 import com.android.developer.expert.base.BaseActivity
 import com.android.developer.expert.databinding.ActivityMainBinding
-import com.android.developer.expert.extension.*
+import com.base.binding.delegate.viewBinding
+import com.base.extension.disableDisplayShowAndHomeAsUp
+import com.base.extension.disableMenuChecked
+import com.base.extension.openActivity
+import com.base.extension.show
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.LayoutParams.*
 

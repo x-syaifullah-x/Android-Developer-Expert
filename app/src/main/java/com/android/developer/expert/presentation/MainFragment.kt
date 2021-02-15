@@ -16,12 +16,12 @@ import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.core.domain.model.putType
 import com.android.developer.expert.databinding.FragmentMainBinding
 import com.android.developer.expert.databinding.ItemDiscoverBinding
-import com.android.developer.expert.delegate.viewBinding
-import com.android.developer.expert.extension.createPair
-import com.android.developer.expert.extension.openActivity
-import com.android.developer.expert.extension.setVisibleWithCircularReveal
 import com.android.developer.expert.presentation.adapter.FooterAdapter
 import com.android.developer.expert.presentation.adapter.ItemDiscoverAdapter
+import com.base.binding.delegate.viewBinding
+import com.base.extension.createPair
+import com.base.extension.openActivity
+import com.base.extension.setVisibleWithCircularReveal
 
 abstract class MainFragment : BasePagingDataFragment<ItemModel>(fragment_main) {
 

@@ -7,9 +7,9 @@ import com.android.developer.expert.core.domain.model.ItemModel
 import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.core.domain.model.putType
 import com.android.developer.expert.databinding.ItemDiscoverBinding
-import com.android.developer.expert.extension.openActivity
 import com.android.developer.expert.presentation.MainFragment
 import com.android.developer.expert.presentation.detail.DetailActivity.Companion.DATA_EXTRA
+import com.base.extension.openActivity
 
 open class FavoriteMovieFragment : MainFragment() {
 

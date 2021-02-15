@@ -20,7 +20,11 @@ import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.core.domain.model.base.IDetailModel
 import com.android.developer.expert.core.domain.model.getTheMovieType
 import com.android.developer.expert.databinding.ActivityDetailBinding
-import com.android.developer.expert.extension.*
+import com.base.binding.delegate.viewBinding
+import com.base.extension.setHomeButton
+import com.base.extension.setVisibleWithCircularReveal
+import com.base.extension.show
+import com.base.extension.startPostponedEnterTransition
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior.*
@@ -137,7 +141,7 @@ abstract class DetailActivity : BaseActivity<ActivityDetailBinding>(),
     private fun isDestFromFav() = intent.getBooleanExtra(DATA_EXTRA, false)
 
     private fun removePosterTransitionName() {
-        if (poster.drawable == null) banner.removeTransitionName()
+        if (poster.drawable == null) banner.transitionName = null
     }
 
     fun isStatBottomSheet(stat: Int) = (bottomSheetBehavior.state == stat)

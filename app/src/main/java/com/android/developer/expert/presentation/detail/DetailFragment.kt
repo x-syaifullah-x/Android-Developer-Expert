@@ -17,8 +17,8 @@ import com.android.developer.expert.core.domain.model.Resource
 import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.core.domain.model.base.IDetailModel
 import com.android.developer.expert.core.domain.model.putType
-import com.android.developer.expert.extension.openActivityAndFinis
 import com.android.developer.expert.presentation.adapter.ItemRecommendationAdapter
+import com.base.extension.openActivityAndFinis
 import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDED
 
 abstract class DetailFragment<Model : IDetailModel>(@LayoutRes layout: Int) : Fragment(layout) {

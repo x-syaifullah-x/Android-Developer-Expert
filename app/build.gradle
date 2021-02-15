@@ -58,6 +58,8 @@ dependencies {
 
     api project(":core")
 
+    api deps.my_module.base
+
     testImplementation deps.my_module.test_utils
     androidTestImplementation deps.my_module.test_utils
 

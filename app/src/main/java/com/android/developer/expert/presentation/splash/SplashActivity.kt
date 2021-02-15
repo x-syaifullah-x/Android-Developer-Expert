@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.MainActivity
-import com.android.developer.expert.extension.hideSystemUI
-import com.android.developer.expert.extension.openActivityAndFinish
+import com.base.extension.hideSystemUI
+import com.base.extension.openActivityAndFinish
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

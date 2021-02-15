@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.android.developer.expert.R
 import com.android.developer.expert.databinding.FragmentFeatureBinding
-import com.android.developer.expert.delegate.viewBinding
+import com.base.binding.delegate.viewBinding
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import timber.log.Timber

@@ -5,18 +5,18 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
-import com.android.developer.expert.base.adapter.HolderWithBinding
+import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.databinding.ItemFooterBinding
 
 class FooterAdapter(
     private val callbackRetry: () -> Unit
-) : LoadStateAdapter<HolderWithBinding<ItemFooterBinding>>() {
+) : LoadStateAdapter<ViewHolder<ItemFooterBinding>>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState) =
-        HolderWithBinding(ItemFooterBinding.inflate(LayoutInflater.from(parent.context)))
+        ViewHolder(ItemFooterBinding.inflate(LayoutInflater.from(parent.context)))
 
     override fun onBindViewHolder(
-        holder: HolderWithBinding<ItemFooterBinding>,
+        holder: ViewHolder<ItemFooterBinding>,
         loadState: LoadState
     ) {
         holder.binding.also {

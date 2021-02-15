@@ -7,12 +7,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.android.developer.expert.App
-import com.android.developer.expert.delegate.viewBinding
 import com.android.developer.expert.di.multibinding.ViewModelFactory
 import com.android.developer.expert.presentation.favorite.R.string.tab_movies
 import com.android.developer.expert.presentation.favorite.R.string.tab_tv
 import com.android.developer.expert.presentation.favorite.databinding.FragmentFavoriteBinding
 import com.android.developer.expert.presentation.favorite.di.component.DaggerFavoriteComponent
+import com.base.binding.delegate.viewBinding
 import javax.inject.Inject
 
 class FavoriteFragment : Fragment(R.layout.fragment_favorite) {

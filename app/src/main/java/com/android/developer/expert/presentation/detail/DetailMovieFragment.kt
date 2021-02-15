@@ -5,7 +5,7 @@ import com.android.developer.expert.R
 import com.android.developer.expert.core.domain.model.DetailMovieModel
 import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.databinding.FragmentDetailMovieBinding
-import com.android.developer.expert.delegate.viewBinding
+import com.base.binding.delegate.viewBinding
 
 class DetailMovieFragment : DetailFragment<DetailMovieModel>(R.layout.fragment_detail_movie) {
 
