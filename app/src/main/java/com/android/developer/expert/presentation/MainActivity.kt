@@ -21,8 +21,6 @@ import com.google.android.material.appbar.AppBarLayout.LayoutParams.*
 
 abstract class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    private lateinit var navHostFragment: NavHostFragment
-
     private val navController by lazy { navHostFragment.navController }
 
     private val bottomNavigation by lazy { binding.bottomNavigationView }
@@ -31,11 +29,11 @@ abstract class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun isInject() = true
 
+    override fun getIdNavHost() = nav_host_main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setSupportActionBar(binding.toolbar)
-
-        navHostFragment = supportFragmentManager.findFragmentById(nav_host_main) as NavHostFragment
 
         setupWithNavController(bottomNavigation, navController)
 

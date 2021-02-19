@@ -16,9 +16,8 @@ abstract class BaseActivity<ActivityViewBinding : ViewBinding> :
     open fun isInject(): Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
         @Suppress("UNCHECKED_CAST")
         if (isInject()) (application as App).appComponent.inject(this as BaseActivity<ViewBinding>)
+        super.onCreate(savedInstanceState)
     }
 }

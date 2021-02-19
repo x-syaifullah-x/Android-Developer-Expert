@@ -8,13 +8,13 @@ apply from: "$project.rootDir/code_coverage_app.gradle"
 
 android {
 
-    compileSdkVersion build_versions.compile_sdk
-    buildToolsVersion build_versions.build_tools
+    compileSdkVersion build_versions.compile_sdk_version
+    buildToolsVersion build_versions.build_tools_version
 
     defaultConfig {
         applicationId "com.android.developer.expert"
-        minSdkVersion build_versions.min_sdk
-        targetSdkVersion build_versions.target_sdk
+        minSdkVersion build_versions.min_sdk_version
+        targetSdkVersion build_versions.target_sdk_version
         versionCode build_versions.version_code
         versionName build_versions.version_name
 
@@ -65,14 +65,8 @@ dependencies {
 
     debugImplementation deps.square_up.leakcanary
 
-    api deps.androidx.legacy_support
-    api deps.androidx.core_ktx
-    api deps.androidx.appcompat
-    api deps.androidx.constraintlayout
-    api deps.androidx.navigation_fragment_ktx
     api deps.intuit.sdp
     api deps.intuit.ssp
-    api deps.google_android.material
     api deps.google_android.play_core
     api deps.loaderviewlibrary
     api deps.lottie
@@ -80,11 +74,6 @@ dependencies {
     implementation deps.androidx.navigation_dynamic_features_fragment
     implementation deps.androidx.navigation_ui_ktx
     implementation deps.androidx.palette_ktx
-
-    implementation deps.lifecycle.extensions
-    implementation deps.lifecycle.viewmodel
-    implementation deps.lifecycle.runtime
-    implementation deps.lifecycle.livedata
 
     implementation deps.glide.glide_transformations
     implementation deps.glide.glide
