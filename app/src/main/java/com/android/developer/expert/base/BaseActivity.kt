@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.viewbinding.ViewBinding
 import com.android.developer.expert.App
 import com.android.developer.expert.di.multibinding.ViewModelFactory
-import com.base.binding.activity.BaseActivityWithNavigation
+import id.xxx.base.binding.activity.BaseActivityWithNavigation
 import javax.inject.Inject
 
 abstract class BaseActivity<ActivityViewBinding : ViewBinding> :

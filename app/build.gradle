@@ -51,14 +51,17 @@ android {
         dataBinding = true
     }
 
-    dynamicFeatures = [':favorite']
+    dynamicFeatures = [':app:favorite']
 }
 
 dependencies {
 
-    api project(":core")
+    api project(":app:core")
+    api project(":base_presentation")
+    api project(":app:domain")
 
-    api deps.my_module.base
+    api 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
 
     testImplementation deps.my_module.test_utils
     androidTestImplementation deps.my_module.test_utils

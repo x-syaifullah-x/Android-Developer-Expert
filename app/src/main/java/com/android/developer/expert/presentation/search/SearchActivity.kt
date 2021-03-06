@@ -20,10 +20,10 @@ import com.android.developer.expert.core.domain.model.putType
 import com.android.developer.expert.core.domain.repository.SearchRepository.Companion.MEDIA_TYPE_TV
 import com.android.developer.expert.databinding.ActivitySearchBinding
 import com.android.developer.expert.presentation.adapter.ItemSearchAdapter
-import com.base.binding.delegate.viewBinding
-import com.base.extension.openActivity
-import com.base.extension.setHomeButton
-import com.base.extension.setVisibleWithCircularReveal
+import id.xxx.base.binding.delegate.viewBinding
+import id.xxx.base.extension.openActivity
+import id.xxx.base.extension.setHomeButton
+import id.xxx.base.extension.setVisibleWithCircularReveal
 
 abstract class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 

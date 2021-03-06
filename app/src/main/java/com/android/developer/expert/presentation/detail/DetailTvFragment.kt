@@ -5,7 +5,7 @@ import com.android.developer.expert.R
 import com.android.developer.expert.core.domain.model.DetailTvModel
 import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.databinding.FragmentDetailTvBinding
-import com.base.binding.delegate.viewBinding
+import id.xxx.base.binding.delegate.viewBinding
 
 class DetailTvFragment : DetailFragment<DetailTvModel>(R.layout.fragment_detail_tv) {
 

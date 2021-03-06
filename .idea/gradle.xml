@@ -11,10 +11,15 @@
         <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/../base-domain/base_domain" />
+            <option value="$PROJECT_DIR$/../base-presentation/base_presentation" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/favorite" />
+            <option value="$PROJECT_DIR$/app/core" />
+            <option value="$PROJECT_DIR$/app/data" />
+            <option value="$PROJECT_DIR$/app/domain" />
+            <option value="$PROJECT_DIR$/app/favorite" />
+            <option value="$PROJECT_DIR$/../the-movie-db/the_movie_db" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

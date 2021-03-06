@@ -20,14 +20,14 @@ import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.core.domain.model.base.IDetailModel
 import com.android.developer.expert.core.domain.model.getTheMovieType
 import com.android.developer.expert.databinding.ActivityDetailBinding
-import com.base.binding.delegate.viewBinding
-import com.base.extension.setHomeButton
-import com.base.extension.setVisibleWithCircularReveal
-import com.base.extension.show
-import com.base.extension.startPostponedEnterTransition
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior.*
+import id.xxx.base.binding.delegate.viewBinding
+import id.xxx.base.extension.setHomeButton
+import id.xxx.base.extension.setVisibleWithCircularReveal
+import id.xxx.base.extension.show
+import id.xxx.base.extension.startPostponedEnterTransition
 import kotlin.properties.Delegates
 
 abstract class DetailActivity : BaseActivity<ActivityDetailBinding>(),

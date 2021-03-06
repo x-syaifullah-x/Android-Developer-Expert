@@ -9,8 +9,8 @@ import androidx.navigation.fragment.findNavController
 import com.android.developer.expert.R
 import com.android.developer.expert.base.BasePagingDataFragment.Companion.IS_ERROR
 import com.android.developer.expert.databinding.FragmentErrorBinding
-import com.base.binding.delegate.viewBinding
-import com.base.extension.setVisibleWithCircularReveal
+import id.xxx.base.binding.delegate.viewBinding
+import id.xxx.base.extension.setVisibleWithCircularReveal
 
 class ErrorFragment : Fragment(R.layout.fragment_error) {
 

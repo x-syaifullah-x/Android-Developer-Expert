@@ -1,5 +1,16 @@
-include ':core'
-include ':favorite'
-include ':app'
+include ':app:data'
+include ':app:domain'
+rootProject.name = "Submission Android Developer Expert"
 
-rootProject.name = "Android Developer Expert"
+include ':app'
+include ':app:core'
+include ':app:favorite'
+
+include(":the_movie_db")
+project(":the_movie_db").projectDir = file("../the-movie-db/the_movie_db")
+
+include(":base_presentation")
+project(":base_presentation").projectDir = file("../base-presentation/base_presentation")
+
+include(":base_domain")
+project(":base_domain").projectDir = file("../base-domain/base_domain")

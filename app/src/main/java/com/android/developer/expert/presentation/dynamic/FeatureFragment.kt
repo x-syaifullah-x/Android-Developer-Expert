@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.android.developer.expert.R
 import com.android.developer.expert.databinding.FragmentFeatureBinding
-import com.base.binding.delegate.viewBinding
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
+import id.xxx.base.binding.delegate.viewBinding
 import timber.log.Timber
 
 class FeatureFragment : Fragment(R.layout.fragment_feature) {

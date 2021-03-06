@@ -3,7 +3,6 @@ package com.android.developer.expert.presentation
 import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.navigation.NavDestination
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration.Builder
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -11,13 +10,13 @@ import com.SearchActivity
 import com.android.developer.expert.R.id.*
 import com.android.developer.expert.base.BaseActivity
 import com.android.developer.expert.databinding.ActivityMainBinding
-import com.base.binding.delegate.viewBinding
-import com.base.extension.disableDisplayShowAndHomeAsUp
-import com.base.extension.disableMenuChecked
-import com.base.extension.openActivity
-import com.base.extension.show
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.LayoutParams.*
+import id.xxx.base.binding.delegate.viewBinding
+import id.xxx.base.extension.disableDisplayShowAndHomeAsUp
+import id.xxx.base.extension.disableMenuChecked
+import id.xxx.base.extension.openActivity
+import id.xxx.base.extension.show
 
 abstract class MainActivity : BaseActivity<ActivityMainBinding>() {
 

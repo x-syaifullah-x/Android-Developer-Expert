@@ -12,11 +12,11 @@ import com.GlideApp
 import com.android.developer.expert.R
 import com.android.developer.expert.R.color.design_default_color_primary
 import com.android.developer.expert.extension.listener
-import com.base.extension.setVisibleWithCircularReveal
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import id.xxx.base.extension.setVisibleWithCircularReveal
 import jp.wasabeef.glide.transformations.BlurTransformation
 
 fun DetailActivity.setBanner(
