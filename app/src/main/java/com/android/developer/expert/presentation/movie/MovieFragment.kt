@@ -3,8 +3,8 @@ package com.android.developer.expert.presentation.movie
 import androidx.navigation.navGraphViewModels
 import com.android.developer.expert.R
 import com.android.developer.expert.R.id.nav_graph_main
-import com.android.developer.expert.core.domain.model.Type
-import com.android.developer.expert.core.domain.model.Type.Movie
+import com.android.developer.expert.domain.model.Type
+import com.android.developer.expert.domain.model.Type.Movie
 import com.android.developer.expert.extension.factory
 import com.android.developer.expert.presentation.MainActivity
 import com.android.developer.expert.presentation.MainFragment

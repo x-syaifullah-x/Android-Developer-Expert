@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
 import com.android.developer.expert.base.adapter.paging.IStatPagingData
-import com.android.developer.expert.core.domain.model.base.IModel
+import com.android.developer.expert.domain.model.base.IModel
 
 abstract class BasePagingDataFragment<ItemModel : IModel<Int>>(
     @LayoutRes private val layout: Int

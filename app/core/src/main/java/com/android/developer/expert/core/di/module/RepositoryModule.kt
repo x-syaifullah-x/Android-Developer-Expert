@@ -1,16 +1,16 @@
 package com.android.developer.expert.core.di.module
 
 import androidx.paging.ExperimentalPagingApi
-import com.android.developer.expert.core.data.repository.FavoriteRepositoryImpl
-import com.android.developer.expert.core.data.repository.MovieRepositoryImpl
-import com.android.developer.expert.core.data.repository.SearchRepositoryImpl
-import com.android.developer.expert.core.data.repository.TvRepositoryImpl
-import com.android.developer.expert.core.domain.repository.FavoriteRepository
-import com.android.developer.expert.core.domain.repository.MovieRepository
-import com.android.developer.expert.core.domain.repository.SearchRepository
-import com.android.developer.expert.core.domain.repository.TvRepository
-import com.android.developer.expert.core.domain.usecase.Interactor
-import com.android.developer.expert.core.domain.usecase.InteractorImpl
+import com.android.developer.expert.domain.repository.FavoriteRepository
+import com.android.developer.expert.domain.repository.MovieRepository
+import com.android.developer.expert.domain.repository.SearchRepository
+import com.android.developer.expert.domain.repository.TvRepository
+import com.android.developer.expert.domain.usecase.Interactor
+import com.android.developer.expert.domain.usecase.InteractorImpl
+import com.android.develover.expert.data.repository.FavoriteRepositoryImpl
+import com.android.develover.expert.data.repository.MovieRepositoryImpl
+import com.android.develover.expert.data.repository.SearchRepositoryImpl
+import com.android.develover.expert.data.repository.TvRepositoryImpl
 import com.the.movie.db.di.module.DatabaseModule
 import com.the.movie.db.di.module.NetworkModule
 import dagger.Binds

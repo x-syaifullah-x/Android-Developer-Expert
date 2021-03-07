@@ -3,7 +3,7 @@ package com.android.developer.expert.base.adapter.paging
 import androidx.annotation.CallSuper
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
-import com.android.developer.expert.core.domain.model.base.IModel
+import com.android.developer.expert.domain.model.base.IModel
 import timber.log.Timber
 
 interface IStatPagingData<Model : IModel<Int>> {

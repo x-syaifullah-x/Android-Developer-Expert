@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.android.developer.expert.core.domain.usecase.Interactor
+import com.android.developer.expert.domain.usecase.Interactor
 import javax.inject.Inject
 
 class MainViewModel @Inject constructor(private val interact: Interactor) : ViewModel() {

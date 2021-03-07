@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.android.developer.expert.core.domain.model.SearchModel" />
+            type="com.android.developer.expert.domain.model.SearchModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

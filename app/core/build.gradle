@@ -33,9 +33,8 @@ android {
 
 dependencies {
 
-    api project(":base_domain")
-
-    api project(":the_movie_db")
+    api project(":app:domain")
+    api project(":app:data")
 
     kapt deps.dagger.compiler
 }

@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="com.android.developer.expert.core.domain.model.DetailTvModel" />
+            type="com.android.developer.expert.domain.model.DetailTvModel" />
 
         <import type="android.view.View" />
     </data>

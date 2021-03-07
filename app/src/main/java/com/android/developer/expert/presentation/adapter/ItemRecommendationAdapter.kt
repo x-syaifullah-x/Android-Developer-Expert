@@ -4,8 +4,8 @@ import android.view.LayoutInflater.from
 import android.view.ViewGroup
 import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
-import com.android.developer.expert.core.domain.model.ItemModel
 import com.android.developer.expert.databinding.ItemRecommendationBinding
+import com.android.developer.expert.domain.model.ItemModel
 
 class ItemRecommendationAdapter(
     private val onItemClick: (ItemRecommendationBinding, ItemModel) -> Unit = { _, _ -> }

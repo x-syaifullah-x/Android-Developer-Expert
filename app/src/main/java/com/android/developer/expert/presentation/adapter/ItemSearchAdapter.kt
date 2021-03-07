@@ -4,8 +4,8 @@ import android.view.LayoutInflater.from
 import android.view.ViewGroup
 import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
-import com.android.developer.expert.core.domain.model.SearchModel
 import com.android.developer.expert.databinding.ItemSearchBinding
+import com.android.developer.expert.domain.model.SearchModel
 
 open class ItemSearchAdapter(
     private val onItemClick: (ItemSearchBinding, SearchModel) -> Unit = { _, _ -> }

@@ -2,9 +2,9 @@ package com.android.developer.expert.presentation.detail
 
 import android.os.Bundle
 import com.android.developer.expert.R
-import com.android.developer.expert.core.domain.model.DetailTvModel
-import com.android.developer.expert.core.domain.model.Type
 import com.android.developer.expert.databinding.FragmentDetailTvBinding
+import com.android.developer.expert.domain.model.DetailTvModel
+import com.android.developer.expert.domain.model.Type
 import id.xxx.base.binding.delegate.viewBinding
 
 class DetailTvFragment : DetailFragment<DetailTvModel>(R.layout.fragment_detail_tv) {

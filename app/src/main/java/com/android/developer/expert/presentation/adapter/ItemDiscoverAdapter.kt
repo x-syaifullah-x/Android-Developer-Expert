@@ -4,8 +4,8 @@ import android.view.LayoutInflater.from
 import android.view.ViewGroup
 import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
-import com.android.developer.expert.core.domain.model.ItemModel
 import com.android.developer.expert.databinding.ItemDiscoverBinding
+import com.android.developer.expert.domain.model.ItemModel
 
 class ItemDiscoverAdapter(
     private val onItemClick: (ItemDiscoverBinding, ItemModel) -> Unit = { _, _ -> }

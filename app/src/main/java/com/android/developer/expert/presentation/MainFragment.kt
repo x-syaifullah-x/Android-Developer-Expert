@@ -11,11 +11,11 @@ import com.android.developer.expert.R.layout.fragment_main
 import com.android.developer.expert.R.string.*
 import com.android.developer.expert.base.BasePagingDataFragment
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
-import com.android.developer.expert.core.domain.model.ItemModel
-import com.android.developer.expert.core.domain.model.Type
-import com.android.developer.expert.core.domain.model.putType
 import com.android.developer.expert.databinding.FragmentMainBinding
 import com.android.developer.expert.databinding.ItemDiscoverBinding
+import com.android.developer.expert.domain.model.ItemModel
+import com.android.developer.expert.domain.model.Type
+import com.android.developer.expert.domain.model.putType
 import com.android.developer.expert.presentation.adapter.FooterAdapter
 import com.android.developer.expert.presentation.adapter.ItemDiscoverAdapter
 import id.xxx.base.binding.delegate.viewBinding

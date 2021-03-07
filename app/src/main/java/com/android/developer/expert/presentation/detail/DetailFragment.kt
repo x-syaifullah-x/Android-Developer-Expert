@@ -12,13 +12,13 @@ import com.DetailActivity
 import com.android.developer.expert.R
 import com.android.developer.expert.R.string.detail_error
 import com.android.developer.expert.R.string.detail_not_found
-import com.android.developer.expert.core.domain.model.ItemModel
-import com.android.developer.expert.core.domain.model.Resource
-import com.android.developer.expert.core.domain.model.Type
-import com.android.developer.expert.core.domain.model.base.IDetailModel
-import com.android.developer.expert.core.domain.model.putType
+import com.android.developer.expert.domain.model.ItemModel
+import com.android.developer.expert.domain.model.Type
+import com.android.developer.expert.domain.model.base.IDetailModel
+import com.android.developer.expert.domain.model.putType
 import com.android.developer.expert.presentation.adapter.ItemRecommendationAdapter
 import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDED
+import id.xxx.base.domain.model.Resource
 import id.xxx.base.extension.openActivityAndFinis
 
 abstract class DetailFragment<Model : IDetailModel>(@LayoutRes layout: Int) : Fragment(layout) {

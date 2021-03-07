@@ -16,10 +16,10 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.android.developer.expert.R
 import com.android.developer.expert.R.string.*
 import com.android.developer.expert.base.BaseActivity
-import com.android.developer.expert.core.domain.model.Type
-import com.android.developer.expert.core.domain.model.base.IDetailModel
-import com.android.developer.expert.core.domain.model.getTheMovieType
 import com.android.developer.expert.databinding.ActivityDetailBinding
+import com.android.developer.expert.domain.model.Type
+import com.android.developer.expert.domain.model.base.IDetailModel
+import com.android.developer.expert.domain.model.getTheMovieType
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior.*
@@ -162,7 +162,7 @@ abstract class DetailActivity : BaseActivity<ActivityDetailBinding>(),
         collapsing.title = data?.title ?: errorMessage
         collapsing.setExpandedTitleColor(if (isError) RED else TRANSPARENT)
 
-        if (data?.isValid() == true) setFabAddDelete(data.isFavorite)
+        if (data?.isValid == true) setFabAddDelete(data.isFavorite)
 
         if (isError) {
             banner.setImageResource(R.drawable.detail_error)
