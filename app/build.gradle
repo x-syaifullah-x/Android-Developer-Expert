@@ -61,7 +61,6 @@ dependencies {
 
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
-
     testImplementation deps.my_module.test_utils
     androidTestImplementation deps.my_module.test_utils
 

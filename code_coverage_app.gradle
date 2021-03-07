@@ -66,13 +66,11 @@ project.afterEvaluate {
             classDirectories.setFrom(files([
                     fileTree(dir: "$rootDir/app/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
                     fileTree(dir: "$rootDir/favorite/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
-                    fileTree(dir: "$rootDir/core/build/tmp/kotlin-classes/$variantName", excludes: fileFilter),
             ]))
 
             def coverageSource = files(
                     "$rootDir/app/src/main/java",
                     "$rootDir/favorite/src/main/java",
-                    "$rootDir/core/src/main/java",
             )
 
             additionalSourceDirs.setFrom(coverageSource)
@@ -81,7 +79,6 @@ project.afterEvaluate {
             executionData(files([
                     "$rootDir/app/build/jacoco/${appUnitTest}.exec",
                     "$rootDir/favorite/build/jacoco/${appUnitTest}.exec",
-                    "$rootDir/core/build/jacoco/${appUnitTest}.exec",
             ]))
         }
     }
