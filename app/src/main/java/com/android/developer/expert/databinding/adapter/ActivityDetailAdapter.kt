@@ -2,7 +2,7 @@ package com.android.developer.expert.databinding.adapter
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import com.android.developer.expert.domain.model.GenreModel
+import id.xxx.the.movie.db.domain.model.GenreModel
 
 object ActivityDetailAdapter {
 

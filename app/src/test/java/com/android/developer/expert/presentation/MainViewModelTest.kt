@@ -2,8 +2,8 @@ package com.android.developer.expert.presentation
 
 import androidx.lifecycle.Observer
 import androidx.paging.PagingData
-import com.android.developer.expert.domain.model.ItemModel
-import com.android.developer.expert.domain.usecase.Interactor
+import id.xxx.the.movie.db.domain.model.ItemModel
+import id.xxx.the.movie.db.domain.usecase.Interactor
 import kotlinx.coroutines.flow.flow
 import org.junit.Assert
 import org.junit.Test

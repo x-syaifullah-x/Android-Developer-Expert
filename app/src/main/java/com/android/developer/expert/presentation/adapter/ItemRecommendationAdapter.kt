@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
 import com.android.developer.expert.databinding.ItemRecommendationBinding
-import com.android.developer.expert.domain.model.ItemModel
+import id.xxx.the.movie.db.domain.model.ItemModel
 
 class ItemRecommendationAdapter(
     private val onItemClick: (ItemRecommendationBinding, ItemModel) -> Unit = { _, _ -> }

@@ -1,6 +1,6 @@
 package com.android.developer.expert.presentation.favorite
 
-import com.android.developer.expert.domain.model.Type
+import id.xxx.the.movie.db.domain.model.Type
 
 class FavoriteTvFragment : FavoriteMovieFragment() {
 

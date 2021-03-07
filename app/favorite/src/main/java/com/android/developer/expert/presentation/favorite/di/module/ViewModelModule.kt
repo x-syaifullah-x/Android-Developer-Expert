@@ -1,20 +1,16 @@
 package com.android.developer.expert.presentation.favorite.di.module
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.android.developer.expert.di.annotation.ViewModelKey
-import com.android.developer.expert.di.multibinding.ViewModelFactory
 import com.android.developer.expert.presentation.favorite.FavoriteViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import id.xxx.base.di.annotation.ViewModelKey
+import id.xxx.base.di.module.BaseViewModelModule
 
 @Module
 @Suppress("unused")
-abstract class ViewModelModule {
-    @Binds
-    abstract fun bindsViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
-
+abstract class ViewModelModule : BaseViewModelModule() {
     @Binds
     @IntoMap
     @ViewModelKey(FavoriteViewModel::class)

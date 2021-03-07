@@ -56,9 +56,8 @@ android {
 
 dependencies {
 
-    api project(":app:core")
+    api project(":the_movie_db_di")
     api project(":base_presentation")
-    api project(":app:domain")
 
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 

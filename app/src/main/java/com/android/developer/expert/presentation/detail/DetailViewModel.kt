@@ -3,8 +3,8 @@ package com.android.developer.expert.presentation.detail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.android.developer.expert.domain.model.Type
-import com.android.developer.expert.domain.usecase.Interactor
+import id.xxx.the.movie.db.domain.model.Type
+import id.xxx.the.movie.db.domain.usecase.Interactor
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject

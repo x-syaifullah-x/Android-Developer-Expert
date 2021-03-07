@@ -5,7 +5,7 @@
 
         <variable
             name="data"
-            type="com.android.developer.expert.domain.model.ItemModel" />
+            type="id.xxx.the.movie.db.domain.model.ItemModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

@@ -4,9 +4,9 @@ import androidx.navigation.navGraphViewModels
 import com.DetailActivity
 import com.android.developer.expert.R
 import com.android.developer.expert.databinding.ItemDiscoverBinding
-import com.android.developer.expert.domain.model.ItemModel
-import com.android.developer.expert.domain.model.Type
-import com.android.developer.expert.domain.model.putType
+import id.xxx.the.movie.db.domain.model.ItemModel
+import id.xxx.the.movie.db.domain.model.Type
+import id.xxx.the.movie.db.domain.model.putType
 import com.android.developer.expert.presentation.MainFragment
 import com.android.developer.expert.presentation.detail.DetailActivity.Companion.DATA_EXTRA
 import id.xxx.base.extension.openActivity

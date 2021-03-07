@@ -17,9 +17,9 @@ import com.android.developer.expert.R
 import com.android.developer.expert.R.string.*
 import com.android.developer.expert.base.BaseActivity
 import com.android.developer.expert.databinding.ActivityDetailBinding
-import com.android.developer.expert.domain.model.Type
-import com.android.developer.expert.domain.model.base.IDetailModel
-import com.android.developer.expert.domain.model.getTheMovieType
+import id.xxx.the.movie.db.domain.model.Type
+import id.xxx.the.movie.db.domain.model.base.IDetailModel
+import id.xxx.the.movie.db.domain.model.getTheMovieType
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior.*

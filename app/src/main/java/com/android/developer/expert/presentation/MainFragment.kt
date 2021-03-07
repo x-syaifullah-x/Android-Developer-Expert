@@ -13,9 +13,9 @@ import com.android.developer.expert.base.BasePagingDataFragment
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
 import com.android.developer.expert.databinding.FragmentMainBinding
 import com.android.developer.expert.databinding.ItemDiscoverBinding
-import com.android.developer.expert.domain.model.ItemModel
-import com.android.developer.expert.domain.model.Type
-import com.android.developer.expert.domain.model.putType
+import id.xxx.the.movie.db.domain.model.ItemModel
+import id.xxx.the.movie.db.domain.model.Type
+import id.xxx.the.movie.db.domain.model.putType
 import com.android.developer.expert.presentation.adapter.FooterAdapter
 import com.android.developer.expert.presentation.adapter.ItemDiscoverAdapter
 import id.xxx.base.binding.delegate.viewBinding

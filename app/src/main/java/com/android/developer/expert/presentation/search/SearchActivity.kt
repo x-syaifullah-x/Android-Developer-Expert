@@ -14,10 +14,10 @@ import com.android.developer.expert.R
 import com.android.developer.expert.R.string.*
 import com.android.developer.expert.base.BaseActivity
 import com.android.developer.expert.databinding.ActivitySearchBinding
-import com.android.developer.expert.domain.model.SearchModel
-import com.android.developer.expert.domain.model.Type
-import com.android.developer.expert.domain.model.putType
-import com.android.developer.expert.domain.repository.SearchRepository.Companion.MEDIA_TYPE_TV
+import id.xxx.the.movie.db.domain.model.SearchModel
+import id.xxx.the.movie.db.domain.model.Type
+import id.xxx.the.movie.db.domain.model.putType
+import id.xxx.the.movie.db.domain.repository.SearchRepository.Companion.MEDIA_TYPE_TV
 import com.android.developer.expert.presentation.adapter.ItemSearchAdapter
 import id.xxx.base.binding.delegate.viewBinding
 import id.xxx.base.domain.model.Resource

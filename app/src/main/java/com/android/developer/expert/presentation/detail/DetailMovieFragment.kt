@@ -3,8 +3,8 @@ package com.android.developer.expert.presentation.detail
 import android.os.Bundle
 import com.android.developer.expert.R
 import com.android.developer.expert.databinding.FragmentDetailMovieBinding
-import com.android.developer.expert.domain.model.DetailMovieModel
-import com.android.developer.expert.domain.model.Type
+import id.xxx.the.movie.db.domain.model.DetailMovieModel
+import id.xxx.the.movie.db.domain.model.Type
 import id.xxx.base.binding.delegate.viewBinding
 
 class DetailMovieFragment : DetailFragment<DetailMovieModel>(R.layout.fragment_detail_movie) {

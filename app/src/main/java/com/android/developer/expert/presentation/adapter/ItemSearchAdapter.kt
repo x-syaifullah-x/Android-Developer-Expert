@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
 import com.android.developer.expert.databinding.ItemSearchBinding
-import com.android.developer.expert.domain.model.SearchModel
+import id.xxx.the.movie.db.domain.model.SearchModel
 
 open class ItemSearchAdapter(
     private val onItemClick: (ItemSearchBinding, SearchModel) -> Unit = { _, _ -> }

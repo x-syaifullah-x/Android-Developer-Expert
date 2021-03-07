@@ -1,9 +1,9 @@
 package com.android.developer.expert.presentation.detail
 
 import androidx.lifecycle.Observer
-import com.android.developer.expert.domain.model.DetailMovieModel
-import com.android.developer.expert.domain.model.DetailTvModel
-import com.android.developer.expert.domain.usecase.Interactor
+import id.xxx.the.movie.db.domain.model.DetailMovieModel
+import id.xxx.the.movie.db.domain.model.DetailTvModel
+import id.xxx.the.movie.db.domain.usecase.Interactor
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert
 import org.junit.Test

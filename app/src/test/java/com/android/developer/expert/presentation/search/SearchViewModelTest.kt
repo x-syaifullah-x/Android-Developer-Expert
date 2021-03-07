@@ -1,8 +1,8 @@
 package com.android.developer.expert.presentation.search
 
 import androidx.lifecycle.Observer
-import com.android.developer.expert.domain.model.SearchModel
-import com.android.developer.expert.domain.usecase.Interactor
+import id.xxx.the.movie.db.domain.model.SearchModel
+import id.xxx.the.movie.db.domain.usecase.Interactor
 import kotlinx.coroutines.flow.flowOf
 import org.junit.Assert
 import org.junit.Test

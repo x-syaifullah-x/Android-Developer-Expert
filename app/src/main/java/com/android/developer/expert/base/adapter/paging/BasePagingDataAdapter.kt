@@ -5,7 +5,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.viewbinding.ViewBinding
 import com.android.developer.expert.base.adapter.ViewHolder
-import com.android.developer.expert.domain.model.base.IModel
+import id.xxx.the.movie.db.domain.model.base.IModel
 
 abstract class BasePagingDataAdapter<ItemBinding : ViewBinding, Model : IModel<*>> :
     PagingDataAdapter<Model, ViewHolder<ItemBinding>>(Diff<Model>()) {

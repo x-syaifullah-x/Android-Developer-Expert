@@ -1,7 +1,7 @@
 package com.android.developer.expert.presentation.tv
 
 import com.android.developer.expert.R
-import com.android.developer.expert.domain.model.Type
+import id.xxx.the.movie.db.domain.model.Type
 import com.android.developer.expert.presentation.movie.MovieFragment
 
 class TvFragment : MovieFragment() {

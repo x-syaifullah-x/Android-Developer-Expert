@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import com.android.developer.expert.base.adapter.ViewHolder
 import com.android.developer.expert.base.adapter.paging.BasePagingDataAdapter
 import com.android.developer.expert.databinding.ItemDiscoverBinding
-import com.android.developer.expert.domain.model.ItemModel
+import id.xxx.the.movie.db.domain.model.ItemModel
 
 class ItemDiscoverAdapter(
     private val onItemClick: (ItemDiscoverBinding, ItemModel) -> Unit = { _, _ -> }

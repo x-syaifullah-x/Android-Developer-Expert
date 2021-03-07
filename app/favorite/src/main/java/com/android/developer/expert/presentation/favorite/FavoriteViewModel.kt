@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
-import com.android.developer.expert.domain.usecase.Interactor
+import id.xxx.the.movie.db.domain.usecase.Interactor
 import javax.inject.Inject
 
 class FavoriteViewModel @Inject constructor(interact: Interactor) : ViewModel() {
