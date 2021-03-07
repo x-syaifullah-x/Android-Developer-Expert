@@ -13,10 +13,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/app/favorite" />
-            <option value="$PROJECT_DIR$/../the-movie-db/the_movie_db_data" />
-            <option value="$PROJECT_DIR$/../the-movie-db/the_movie_db_di" />
-            <option value="$PROJECT_DIR$/../the-movie-db/the_movie_db_domain" />
+            <option value="$PROJECT_DIR$/favorite" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

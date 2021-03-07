@@ -51,13 +51,12 @@ android {
         dataBinding = true
     }
 
-    dynamicFeatures = [':app:favorite']
+    dynamicFeatures = [':favorite']
 }
 
 dependencies {
 
-    api project(":the_movie_db_di")
-//    api project(":base_presentation")
+    api "com.github.x-syaifullah-x.android-the-movie-db:the_movie_db_di:0.0.1"
     api "com.github.x-syaifullah-x:android-base-presentation:0.0.1"
 
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'

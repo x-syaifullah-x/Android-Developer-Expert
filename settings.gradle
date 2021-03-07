@@ -1,13 +1,4 @@
 rootProject.name = "Submission Android Developer Expert"
 
 include ':app'
-include ':app:favorite'
-
-include(":the_movie_db_data")
-project(":the_movie_db_data").projectDir = file("../the-movie-db/the_movie_db_data")
-
-include(":the_movie_db_domain")
-project(":the_movie_db_domain").projectDir = file("../the-movie-db/the_movie_db_domain")
-
-include(":the_movie_db_di")
-project(":the_movie_db_di").projectDir = file("../the-movie-db/the_movie_db_di")
+include ':favorite'
