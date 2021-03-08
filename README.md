@@ -2,10 +2,6 @@
 
 [![x-syaifullah-x](https://circleci.com/gh/x-syaifullah-x/submission-android-developer-expert.svg?style=shield)](https://circleci.com/gh/x-syaifullah-x/submission-android-developer-expert)
 
-### Api
-
-* ###### [TheMovieDB](https://developers.themoviedb.org/3/getting-started/introduction)
-
 ### System Design
 * ###### Use Design Pettern
 * ###### Architecture Pattern
@@ -19,13 +15,13 @@
     * ###### DataSource -> Framework
 
 ### System Layer
-* ###### Presentation ( UI & PRASENTER )
-* ###### Domain ( USE CASE & Entities )
-* ###### Data ( REPOSITORY & DATA SOURCE )
+* ###### [Presentation( UI & PRASENTER )](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/app/src/main/java/com/android/developer/expert/presentation)
+* ###### [Domain ( USE CASE & Entities )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain/src/main/java/id/xxx/the/movie/db/domain)
+* ###### [Data ( REPOSITORY & DATA SOURCE )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data/src/main/java/id/xxx/the/movie/db/data)
 
 ### Modularization
-* ###### favorite -> [ Dynamic Feature Favorite](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/favorite)
-* ###### the_movie_db -> [Data Source The Movie DB](https://github.com/x-syaifullah-x/android-the-movie-db)
+* ###### favorite -> [dynamic-feature (Favorite)](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/favorite)
+* ###### android-the-movie-db -> [module (The Movie DB)](https://github.com/x-syaifullah-x/android-the-movie-db)
 
 ### Features :
 * ###### List Item Discover Movie WIth Pagging
@@ -59,8 +55,6 @@
 
 ### Security
 * ###### Obfuscation With ProGuard
-* ###### Encryption Database
-* ###### Use Certificate Pinning And Dns Resolver Connection To Server.
 
 ### ScreenShoot
 <div>
