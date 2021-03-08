@@ -5,10 +5,8 @@
 ### System Design
 * ###### Use Design Pettern
 * ###### Architecture Pattern
-    * ###### With MVVM
-* ###### Architecture Pattern
-    * ###### Use Clean Architecture
-        * ###### Ui -> Framework - [:app](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/master/app)
+    *   ###### Use Clean Architecture
+        * ###### Ui -> Framework - [:app](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/master/app) || [:favorite](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/master/favorite)
         * ###### Presenter -> Interface Adapter - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
         * ###### UseCase -> Application Business Rule - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
         * ###### Entities -> Enterprise Business Rule - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
@@ -16,15 +14,19 @@
         * ###### DataSource -> Framework - [:the_movie_db_data](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data)
 
 ### System Layer
-* ###### [Domain ( USE CASE & Entities )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain) - :the_movie_db_domain
+* ###### Presentation ( UI ) [- :app](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/master/app) || [:favorite](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/master/favorite)
 
-* ###### [Data ( REPOSITORY & DATA SOURCE )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data) - :the_movie_db_data
+* ###### Domain ( USE CASE & Entities ) [- :the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
 
-* ###### [DI ( Dependencies Injection )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_di) - :the_movie_db_di
+* ###### Data ( DATA SOURCE ) [- :the_movie_db_data](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data)
+
+* ###### DI ( Dependencies Injection ) [- :the_movie_db_di](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_di)
 
 ### Modularization
-* ###### favorite -> [dynamic-feature (Favorite)](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/favorite)
-* ###### android-the-movie-db -> [module (The Movie DB)](https://github.com/x-syaifullah-x/android-the-movie-db)
+* ###### [:favorite - dynamic-feature](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/favorite)
+* ###### [:the_movie_db_di - android-library](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_di)
+* ###### [:the_movie_db_domain - android-library](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
+* ###### [:the_movie_db_data - android-library](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data)
 
 ### Features :
 * ###### List Item Discover Movie WIth Pagging
@@ -54,6 +56,8 @@
 
 ### Security
 * ###### Obfuscation With ProGuard
+* ###### Encryption Database
+* ###### Use Certificate Pinning And Dns Resolver Connection To Server.
 
 ### ScreenShoot
 <div>
