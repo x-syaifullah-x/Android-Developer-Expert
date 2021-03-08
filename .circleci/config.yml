@@ -8,8 +8,8 @@ jobs:
     executor: android/android
     steps:
       - checkout
-      - restore_cache:
-          key: android-orb-v1-
+      #      - restore_cache:
+      #          key: android-orb-v1-
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
@@ -34,8 +34,8 @@ jobs:
     executor: android/android
     steps:
       - checkout
-      - restore_cache:
-          key: android-orb-v1-
+      #      - restore_cache:
+      #          key: android-orb-v1-
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
@@ -62,8 +62,8 @@ jobs:
     executor: android/android
     steps:
       - checkout
-      - restore_cache:
-          key: android-orb-v1-
+      #      - restore_cache:
+      #          key: android-orb-v1-
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
@@ -86,7 +86,7 @@ jobs:
 
 workflows:
   version: 2.1
-  build | test | code_coverage:
+  Build | Test | Code Coverage:
     jobs:
       - Build
       - Test

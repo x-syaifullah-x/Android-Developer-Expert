@@ -1,6 +1,6 @@
 # Android Developer Expert
 
-[![x-syaifullah-x](https://circleci.com/gh/x-syaifullah-x/Android-Developer-Expert.svg?style=shield)](https://circleci.com/gh/x-syaifullah-x/Android-Developer-Expert)
+[![x-syaifullah-x](https://circleci.com/gh/x-syaifullah-x/submission-android-developer-expert.svg?style=shield)](https://circleci.com/gh/x-syaifullah-x/submission-android-developer-expert)
 
 ### Api
 
