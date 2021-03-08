@@ -6,18 +6,21 @@
 * ###### Use Design Pettern
 * ###### Architecture Pattern
     * ###### With MVVM
-* ###### Use Clean Architecture
-    * ###### Ui -> Framework
-    * ###### Presenter -> Interface Adapter
-    * ###### UseCase -> Application Business Rule
-    * ###### Entities -> Enterprise Business Rule
-    * ###### Repository -> Interface Adapter
-    * ###### DataSource -> Framework
+* ###### Architecture Pattern
+    * ###### Use Clean Architecture
+        * ###### Ui -> Framework - [:app](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/master/app)
+        * ###### Presenter -> Interface Adapter - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
+        * ###### UseCase -> Application Business Rule - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
+        * ###### Entities -> Enterprise Business Rule - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
+        * ###### Repository -> Interface Adapter - [:the_movie_db_domain](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain)
+        * ###### DataSource -> Framework - [:the_movie_db_data](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data)
 
 ### System Layer
-* ###### [Presentation( UI & PRASENTER )](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/app/src/main/java/com/android/developer/expert/presentation)
-* ###### [Domain ( USE CASE & Entities )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain/src/main/java/id/xxx/the/movie/db/domain)
-* ###### [Data ( REPOSITORY & DATA SOURCE )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data/src/main/java/id/xxx/the/movie/db/data)
+* ###### [Domain ( USE CASE & Entities )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_domain) - :the_movie_db_domain
+
+* ###### [Data ( REPOSITORY & DATA SOURCE )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_data) - :the_movie_db_data
+
+* ###### [DI ( Dependencies Injection )](https://github.com/x-syaifullah-x/android-the-movie-db/tree/master/the_movie_db_di) - :the_movie_db_di
 
 ### Modularization
 * ###### favorite -> [dynamic-feature (Favorite)](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/favorite)
@@ -43,15 +46,11 @@
 ### Dependency Injection
 * ###### With Dagger
 
-### Continuous Integration
-* ###### CircleCI
-
 ### Code Coverage
 * ###### With jacoco
 
 ### Performance
 * ###### Leak analyzed - > Leak Canary
-* ###### There are no performance issues related to the Inspect Code.
 
 ### Security
 * ###### Obfuscation With ProGuard

@@ -59,6 +59,9 @@ dependencies {
     api "com.github.x-syaifullah-x:android-base-presentation:0.0.1"
 
     api "com.github.x-syaifullah-x.android-the-movie-db:the_movie_db_di:0.0.1"
+    api "com.github.x-syaifullah-x.android-the-movie-db:the_movie_db_domain:0.0.1"
+
+    implementation "com.jakewharton.timber:timber:4.7.1"
 
     testImplementation deps.my_module.test_utils
     androidTestImplementation deps.my_module.test_utils
