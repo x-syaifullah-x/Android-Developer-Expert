@@ -24,9 +24,8 @@
 * ###### Data ( REPOSITORY & DATA SOURCE )
 
 ### Modularization
-* ###### core -> Domain & Data
-* ###### favorite -> Dynamic Feature Favorite
-* ###### the_movie_db -> Data Source The Movie DB
+* ###### favorite -> [ Dynamic Feature Favorite](https://github.com/x-syaifullah-x/submission-android-developer-expert/tree/submission_2/favorite)
+* ###### the_movie_db -> [Data Source The Movie DB](https://github.com/x-syaifullah-x/android-the-movie-db)
 
 ### Features :
 * ###### List Item Discover Movie WIth Pagging
