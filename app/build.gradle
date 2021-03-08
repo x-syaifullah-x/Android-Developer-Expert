@@ -4,7 +4,7 @@ plugins {
     id "kotlin-kapt"
 }
 
-apply from: "$project.rootDir/code_coverage_app.gradle"
+apply from: "$project.rootDir/code_coverage.gradle"
 
 android {
 
@@ -56,10 +56,9 @@ android {
 
 dependencies {
 
-    api "com.github.x-syaifullah-x.android-the-movie-db:the_movie_db_di:0.0.1"
     api "com.github.x-syaifullah-x:android-base-presentation:0.0.1"
 
-    api 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    api "com.github.x-syaifullah-x.android-the-movie-db:the_movie_db_di:0.0.1"
 
     testImplementation deps.my_module.test_utils
     androidTestImplementation deps.my_module.test_utils
@@ -73,7 +72,6 @@ dependencies {
     api deps.lottie
 
     implementation deps.androidx.navigation_dynamic_features_fragment
-    implementation deps.androidx.navigation_ui_ktx
     implementation deps.androidx.palette_ktx
 
     implementation deps.glide.glide_transformations

@@ -4,7 +4,7 @@ plugins {
     id "kotlin-kapt"
 }
 
-apply from: "$project.rootDir/code_coverage_module.gradle"
+apply from: "$project.rootDir/code_coverage.gradle"
 
 android {
     compileSdkVersion build_versions.compile_sdk_version

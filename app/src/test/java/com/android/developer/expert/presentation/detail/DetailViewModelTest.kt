@@ -1,6 +1,7 @@
 package com.android.developer.expert.presentation.detail
 
 import androidx.lifecycle.Observer
+import id.xxx.base.domain.model.Resource
 import id.xxx.the.movie.db.domain.model.DetailMovieModel
 import id.xxx.the.movie.db.domain.model.DetailTvModel
 import id.xxx.the.movie.db.domain.usecase.Interactor
@@ -43,7 +44,7 @@ class DetailViewModelTest : RuleUnitTestWithCoroutine() {
     @Test
     fun movieTestError() {
         Mockito.`when`(interact.getMovie(id))
-            .thenReturn(flowOf(Resource.Error(Exception(errorMessage))))
+            .thenReturn(flowOf(Resource.Error(error = Exception(errorMessage))))
         viewModel.refresh(id)
 
         viewModel.movie.observeForever(mockObserverMovie)
@@ -51,7 +52,7 @@ class DetailViewModelTest : RuleUnitTestWithCoroutine() {
         Mockito.verify(mockObserverMovie).onChanged(captorMovie.capture())
 
         Assert.assertTrue(captorMovie.value is Resource.Error)
-        val error = (captorMovie.value as Resource.Error).throwable
+        val error = (captorMovie.value as Resource.Error).error
         Assert.assertEquals(errorMessage, error.message)
     }
 
@@ -71,7 +72,7 @@ class DetailViewModelTest : RuleUnitTestWithCoroutine() {
     @Test
     fun tvTestError() {
         Mockito.`when`(interact.getTv(id))
-            .thenReturn(flowOf(Resource.Error(Exception(errorMessage))))
+            .thenReturn(flowOf(Resource.Error(error = Exception(errorMessage))))
         viewModel.refresh(id)
 
         viewModel.tv.observeForever(mockObserverTv)
@@ -79,7 +80,7 @@ class DetailViewModelTest : RuleUnitTestWithCoroutine() {
         Mockito.verify(mockObserverTv).onChanged(captorTv.capture())
 
         Assert.assertTrue(captorTv.value is Resource.Error)
-        val error = (captorTv.value as Resource.Error).throwable
+        val error = (captorTv.value as Resource.Error).error
         Assert.assertEquals(errorMessage, error.message)
     }
 

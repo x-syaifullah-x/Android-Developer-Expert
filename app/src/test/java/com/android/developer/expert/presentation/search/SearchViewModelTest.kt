@@ -1,6 +1,7 @@
 package com.android.developer.expert.presentation.search
 
 import androidx.lifecycle.Observer
+import id.xxx.base.domain.model.Resource
 import id.xxx.the.movie.db.domain.model.SearchModel
 import id.xxx.the.movie.db.domain.usecase.Interactor
 import kotlinx.coroutines.flow.flowOf
@@ -37,7 +38,7 @@ class SearchViewModelTest : RuleUnitTestWithCoroutine() {
         val query = "test"
         val errorMessage = "test_error"
         Mockito.`when`(interact.search(query))
-            .thenReturn(flowOf(Resource.Error(Exception(errorMessage))))
+            .thenReturn(flowOf(Resource.Error(error = Exception(errorMessage))))
         viewModel.send(query)
         viewModel.searchResult.observeForever(mockObserver)
         mainCoroutineScopeRule.advanceTimeBy(SearchViewModel.QUERY_TIME_OUT)
