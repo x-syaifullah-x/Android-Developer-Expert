@@ -85,5 +85,4 @@ dependencies {
     implementation deps.shimmer_recycler_view
 
     kapt deps.dagger.compiler
-    kapt deps.room.compiler
 }

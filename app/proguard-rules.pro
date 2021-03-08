@@ -24,15 +24,6 @@
 
 # Kotlin
 -assumenosideeffects class kotlin.jvm.internal.Intrinsics {
-	public static void checkExpressionValueIsNotNull(...);
-	public static void checkNotNullExpressionValue(...);
-	public static void checkReturnedValueIsNotNull(...);
-	public static void checkFieldIsNotNull(...);
-	public static void checkParameterIsNotNull(...);
-}
-
-# Kotlin
--assumenosideeffects class kotlin.jvm.internal.Intrinsics {
 	public static void check*(...);
 	public static void throw*(...);
 }
