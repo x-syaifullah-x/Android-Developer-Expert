@@ -35,8 +35,8 @@ android {
 dependencies {
     implementation project(":app")
 
-    testImplementation deps.my_module.test_utils
-    androidTestImplementation deps.my_module.test_utils
+    testImplementation "com.github.x-syaifullah-x:android-test:0.0.1"
+    androidTestImplementation "com.github.x-syaifullah-x:android-test:0.0.1"
 
     kapt deps.dagger.compiler
 }
