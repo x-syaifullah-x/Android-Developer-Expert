@@ -2,6 +2,7 @@ package com.android.developer.expert.presentation.detail
 
 import androidx.lifecycle.Observer
 import id.xxx.base.domain.model.Resource
+import id.xxx.test.rule.RuleUnitTestWithCoroutine
 import id.xxx.the.movie.db.domain.model.DetailMovieModel
 import id.xxx.the.movie.db.domain.model.DetailTvModel
 import id.xxx.the.movie.db.domain.usecase.Interactor
@@ -14,7 +15,6 @@ import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import test.utils.rule.RuleUnitTestWithCoroutine
 
 @RunWith(MockitoJUnitRunner::class)
 class DetailViewModelTest : RuleUnitTestWithCoroutine() {

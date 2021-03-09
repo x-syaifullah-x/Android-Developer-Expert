@@ -2,6 +2,7 @@ package com.android.developer.expert.presentation.search
 
 import androidx.lifecycle.Observer
 import id.xxx.base.domain.model.Resource
+import id.xxx.test.rule.RuleUnitTestWithCoroutine
 import id.xxx.the.movie.db.domain.model.SearchModel
 import id.xxx.the.movie.db.domain.usecase.Interactor
 import kotlinx.coroutines.flow.flowOf
@@ -13,7 +14,6 @@ import org.mockito.Captor
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import test.utils.rule.RuleUnitTestWithCoroutine
 
 @RunWith(MockitoJUnitRunner::class)
 class SearchViewModelTest : RuleUnitTestWithCoroutine() {
